@@ -7,11 +7,12 @@
     <div>
       <VClicks class="space-y-2 mt-10 text-xl">
         <ul>
-          <li>🚀 7 years building with Vue</li>
-          <li>💼 Developer at Otto Payments</li>
-          <li>🏡 Based in Geretsried (south of Munich, Bavaria)</li>
-          <li>✍️ Blogger at alexop.dev</li>
-          <li>🎤 Sharing & speaking about Vue, testing & GraphQL & Ai</li>
+          <li>🚀 8 Jahre Erfahrung als Softwareentwickler</li>
+          <li>💼 Entwickler bei Otto Payments</li>
+          <li>🏡 Wohnhaft in Geretsried (südlich von München)</li>
+          <li>✍️ Blogger auf alexop.dev</li>
+          <li>🎤 Talks über Vue, Testing, GraphQL & KI</li>
+          <li>🥐 Franzbrötchen-süchtig</li>
         </ul>
       </VClicks>
     </div>
