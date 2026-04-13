@@ -1071,6 +1071,121 @@ Für Forks heißt das in der Praxis:
 - kein blindes Ausführen mit Secrets
 - lieber zweistufig: prüfen, dann bewusst freigeben
 - Human-in-the-loop ist hier kein Bug, sondern das Sicherheitsmodell
+- **`ACTIONS_STEP_DEBUG: true` nie anschalten** — loggt Tool-Output inkl. Dateiinhalte & ENV unfiltered ins öffentliche Actions-Log
+
+---
+
+# Der QA-Agent ist nur ein Pattern von vier
+
+`claude-code-action@v1` unterstützt vier Muster — du hast bisher **eins** gesehen.
+
+<div class="grid grid-cols-2 gap-4 mt-6 text-sm">
+  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 1</div>
+    <div class="text-lg font-bold mb-1">Interactive</div>
+    <div class="opacity-80">Dev schreibt <code>@claude fix it</code> im PR-Kommentar → Agent pusht Fix</div>
+  </div>
+  <div class="border border-[#ff6bed] rounded px-4 py-4 bg-[#ff6bed]/10">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 2 — unser Fokus</div>
+    <div class="text-lg font-bold mb-1">Automated PR Review / QA</div>
+    <div class="opacity-80">PR öffnet → Agent testet / reviewt automatisch</div>
+  </div>
+  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 3</div>
+    <div class="text-lg font-bold mb-1">CI Auto-Fix</div>
+    <div class="opacity-80">CI wird rot → Agent diagnostiziert Log → pusht Fix-Branch</div>
+  </div>
+  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 4</div>
+    <div class="text-lg font-bold mb-1">Structured Output</div>
+    <div class="opacity-80">JSON-Schema → nachgelagerte Steps entscheiden (flaky? retry?)</div>
+  </div>
+</div>
+
+<div class="mt-6 text-center opacity-80">Pattern 4 kennst du schon — das ist unser Merge Gate.</div>
+
+---
+
+# Pattern 1: Interactive `@claude`
+
+Kein Auto-Trigger. Der Agent wartet auf Zuruf — irgendwo in PR, Issue oder Review-Kommentar.
+
+```yaml
+on:
+  issue_comment:         { types: [created] }
+  pull_request_review_comment: { types: [created] }
+
+jobs:
+  claude:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+```
+
+Dann reicht im PR-Kommentar:
+
+> `@claude fix the failing test in auth.spec.ts`
+
+→ Branch wird ausgecheckt, Fehler gelesen, Datei editiert, Commit gepusht. **Nur für User mit Write-Access** — externe Contributors blockiert by default.
+
+---
+
+# Pattern 3: CI Auto-Fix — der Force Multiplier
+
+Trigger: CI wird rot. Der Agent liest die Logs, macht einen Fix-Branch, pusht, öffnet PR. **Merge bleibt beim Menschen.**
+
+```yaml
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  auto-fix:
+    if: |
+      github.event.workflow_run.conclusion == 'failure' &&
+      !startsWith(github.event.workflow_run.head_branch, 'claude-auto-fix-ci-')
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          prompt: "CI failed. Diagnose logs, fix root cause."
+          claude_args: "--max-turns 10 --allowedTools 'Edit,Read,Bash(git:*),Bash(npm:*)'"
+```
+
+Das `!startsWith(...'claude-auto-fix-ci-')` ist **kein Kosmetik-Check** — ohne den Guard triggert jeder Fix-Commit wieder den Fixer. Endlosschleife auf deiner Kreditkarte.
+
+---
+
+# Was kostet das eigentlich?
+
+Community-Benchmarks mit Sonnet, Stand heute:
+
+| PR-Größe | Lines Changed | Kosten pro Run |
+|----------|:-------------:|:--------------:|
+| Small    | < 200         | **$0.01 – $0.03** |
+| Medium   | 200 – 1.000   | **$0.05 – $0.15** |
+| Large    | 1.000+        | **$0.20 – $0.50** |
+
+**50 PRs/Monat → unter 5 $ API-Kosten.**
+
+<div class="mt-6 opacity-85">
+
+Die Hebel, die wirklich wirken:
+
+- `--max-turns 5` statt unlimited
+- `cancel-in-progress: true` — neue Commits killen alte Runs
+- `--model claude-sonnet-4-6` — ~60% günstiger als Opus, reicht für Routine-QA
+- `paths-ignore: ['*.md', 'docs/**']` — Doku-Only-PRs überspringen
+- `timeout-minutes: 20` — Notbremse
+
+</div>
+
+<div class="mt-4 text-sm opacity-60">Ab ~100 $/Monat Token-Spend lohnt sich Claude Max (5× Usage-Flat).</div>
 
 ---
 
@@ -1177,6 +1292,52 @@ Die bittere Lektion sagt: Bau lieber den <span class="text-[#ff6bed]">Loop</span
 
 ---
 
+# AI QA ersetzt nicht — sie sitzt obendrauf
+
+<div class="flex justify-center">
+  <RoughSvg :width="720" :height="420" :padding="16" :roughness="1.5" :seed="17">
+    <RoughRect :x="60"  :y="300" :width="600" :height="70" variant="muted"   fill-style="hachure" />
+    <RoughRect :x="150" :y="220" :width="420" :height="70" variant="muted"   fill-style="hachure" />
+    <RoughRect :x="225" :y="140" :width="270" :height="70" variant="default" fill-style="hachure" />
+    <RoughRect :x="285" :y="60"  :width="150" :height="70" variant="accent"  fill-style="hachure" />
+
+    <RoughText :x="360" :y="100" variant="label">AI QA</RoughText>
+    <RoughText :x="360" :y="120" variant="subtitle">exploratory, edge cases</RoughText>
+
+    <RoughText :x="360" :y="180" variant="label">E2E</RoughText>
+    <RoughText :x="360" :y="200" variant="subtitle">Playwright / Cypress — deterministisch</RoughText>
+
+    <RoughText :x="360" :y="260" variant="label">Integration</RoughText>
+    <RoughText :x="360" :y="280" variant="subtitle">Komponenten-Zusammenspiel</RoughText>
+
+    <RoughText :x="360" :y="340" variant="label">Unit</RoughText>
+    <RoughText :x="360" :y="360" variant="subtitle">Regressionen in Millisekunden</RoughText>
+  </RoughSvg>
+</div>
+
+<div class="text-center text-lg opacity-80 mt-2">
+Die Pyramide bleibt. Quinn sitzt obendrauf — für das, was Scripts nicht finden.
+</div>
+
+---
+
+# Wo passt AI QA rein?
+
+|                      | Unit Tests | E2E Script | AI QA (Quinn) |
+|----------------------|:----------:|:----------:|:-------------:|
+| User-Flows           |     ❌     |     ✅     |      ✅       |
+| Überlebt UI-Änderung |     ❌     |     ❌     |      ✅       |
+| Findet Edge Cases    |  manuell   |  manuell   |   automatisch |
+| Maintenance          |   niedrig  |    hoch    |    niedrig    |
+| Deterministisch      |     ✅     |     ✅     |      ❌       |
+
+<div class="mt-8 text-lg opacity-80">
+Die letzte Zeile ist der Haken: AI QA ist <b>nicht</b> reproduzierbar wie ein Script.<br/>
+Deswegen ergänzt sie die Pyramide — sie ersetzt sie nicht.
+</div>
+
+---
+
 # Take-Away
 
 > **AI macht QA nicht überflüssig — sie verschiebt QA von *Tippen* zu *Denken*.**
@@ -1197,3 +1358,12 @@ layout: end
 **Alexander Opalic** · Quality Night Hamburg 2026
 
 Fragen?
+
+<div class="mt-12 flex flex-col items-center">
+  <img
+    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://quality-night-hamburg-26-git-main-alexanderops-projects.vercel.app/"
+    alt="QR Code zu den Slides"
+    class="rounded-lg bg-white p-2"
+  />
+  <div class="mt-3 text-sm opacity-70">Slides</div>
+</div>
