@@ -12,25 +12,35 @@ info: |
 
   Von Alexander Opalic — Quality Night Hamburg 2026
 hideFooter: true
+layout: image
+image: /quality-night-hamburg-2026.jpeg
+backgroundSize: contain
 ---
 
-Building an AI QA Engineer with Claude Code and Playwright MCP
+---
+layout: center
+class: text-center
+---
 
-<div class="flex items-center justify-center gap-6 mt-12 text-sm">
-  <div class="border border-white/20 rounded px-5 py-3 bg-white/5">
-    <div class="opacity-50 text-xs uppercase tracking-wider mb-1">Gehirn</div>
-    <div>Claude Code</div>
-  </div>
-  <div class="text-2xl opacity-40">+</div>
-  <div class="border border-white/20 rounded px-5 py-3 bg-white/5">
-    <div class="opacity-50 text-xs uppercase tracking-wider mb-1">Hände</div>
-    <div>Playwright MCP</div>
-  </div>
-  <div class="text-2xl opacity-40">→</div>
-  <div class="border border-[#ff6bed] rounded px-5 py-3 bg-[#ff6bed]/10">
-    <div class="opacity-60 text-xs uppercase tracking-wider mb-1 text-[#ff6bed]">Ergebnis</div>
-    <div>AI QA Engineer</div>
-  </div>
+# Einen KI-QA-Engineer bauen
+
+<div class="mt-10 text-3xl opacity-80 whitespace-nowrap">
+  mit Claude Code und
+</div>
+
+<div class="mt-4 text-5xl font-bold whitespace-nowrap h-16 flex items-center justify-center">
+  <v-switch>
+    <template #1><span>Playwright MCP</span></template>
+    <template #2><span v-mark.red.strike-through>Playwright MCP</span></template>
+    <template #3>
+      <span
+        v-motion
+        :initial="{ y: 30, opacity: 0 }"
+        :enter="{ y: 0, opacity: 1, transition: { duration: 500 } }"
+        class="text-[#ff6bed]"
+      >agent-browser</span>
+    </template>
+  </v-switch>
 </div>
 
 ---
@@ -40,51 +50,18 @@ backgroundSize: contain
 ---
 
 ---
-layout: center
+layout: statement
 ---
 
-Wie kann man KI sinnvoll im QA-Bereich einsetzen?
+# Wie kann man KI<br/>sinnvoll im <span class="text-[#ff6bed]">QA-Bereich</span> einsetzen?
 
+---
+layout: statement
 ---
 
 # Coden ist gelöst
 
-Ich hab gefühlt seit 4 Monaten kaum noch selbst Code geschrieben.
-
-<div class="mt-12 max-w-2xl mx-auto text-xs">
-  <div class="flex items-center gap-4 mb-2">
-    <span class="w-16 opacity-60">Monat 1</span>
-    <div class="flex-1 flex h-5">
-      <div class="bg-white/40" style="width: 80%"></div>
-      <div class="bg-[#ff6bed]" style="width: 20%"></div>
-    </div>
-  </div>
-  <div class="flex items-center gap-4 mb-2">
-    <span class="w-16 opacity-60">Monat 2</span>
-    <div class="flex-1 flex h-5">
-      <div class="bg-white/40" style="width: 55%"></div>
-      <div class="bg-[#ff6bed]" style="width: 45%"></div>
-    </div>
-  </div>
-  <div class="flex items-center gap-4 mb-2">
-    <span class="w-16 opacity-60">Monat 3</span>
-    <div class="flex-1 flex h-5">
-      <div class="bg-white/40" style="width: 25%"></div>
-      <div class="bg-[#ff6bed]" style="width: 75%"></div>
-    </div>
-  </div>
-  <div class="flex items-center gap-4 mb-4">
-    <span class="w-16 opacity-60">Heute</span>
-    <div class="flex-1 flex h-5">
-      <div class="bg-white/40" style="width: 8%"></div>
-      <div class="bg-[#ff6bed]" style="width: 92%"></div>
-    </div>
-  </div>
-  <div class="flex gap-6 justify-center mt-4 opacity-70">
-    <div class="flex items-center gap-2"><div class="w-3 h-3 bg-white/40"></div>Ich</div>
-    <div class="flex items-center gap-2"><div class="w-3 h-3 bg-[#ff6bed]"></div>AI</div>
-  </div>
-</div>
+<div class="mt-6 text-2xl opacity-80">Ich hab gefühlt seit 4 Monaten<br/>kaum noch selbst Code geschrieben.</div>
 
 ---
 layout: image
@@ -95,10 +72,6 @@ backgroundSize: contain
 ---
 
 # Die Software Factory
-
-> "It's like giving them a nuclear-powered six-axis mill. **It's a single-person software factory.**"
->
-> — Lee Edwards, Root Ventures
 
 Du schreibst eine Spec. Der Agent baut. Du reviewst.
 
@@ -147,12 +120,12 @@ Code ist schnell. Was rückt nach?
 <div class="mt-10 text-center opacity-80">Das Tippen ist nicht mehr das Problem. Das <b>Prüfen</b> wird zum Engpass.</div>
 
 ---
+layout: statement
+---
 
-# Heute: QA
+# Heute: <span class="text-[#ff6bed]">QA</span>
 
-Wenn AI den Code schreibt, **muss QA mitwachsen** — sonst landen Bugs in Production.
-
-Die Frage ist nicht mehr *"wer schreibt den Test?"*, sondern *"wie verstärken wir QA mit Agents?"*
+<div class="mt-6 text-2xl opacity-80">Wenn AI den Code schreibt,<br/>muss QA mitwachsen — sonst landen Bugs in Production.</div>
 
 ---
 layout: image-right
@@ -174,33 +147,21 @@ Use-Cases aus dem Buch:
 <div class="text-xs opacity-60 mt-1">manning.com/books/software-testing-with-generative-ai</div>
 
 ---
+layout: statement
+---
 
 # Disclaimer
 
-Vieles davon ist heute noch sehr experimentell.
+<div class="mt-6 text-2xl opacity-80">Vieles davon ist heute noch sehr experimentell.</div>
+<div class="mt-4 text-2xl">Aber ich bin überzeugt: <span class="text-[#ff6bed]">dort geht die Reise hin.</span></div>
 
-Aber ich bin überzeugt: dort geht die Reise hin.
-
----
-
-layout: default
 ---
 
 <About />
 
 ---
 
-# Was ist ein LLM?
-
-Im Kern: **Autocomplete auf Steroiden.**
-
-Ein Modell sagt das nächste Token voraus — Token für Token. Mehr nicht. Aber mit unfassbar viel Power dahinter.
-
-Klingt nach einem "stochastischen Papagei" — und viele sehen es genau so.
-
----
-
-# Token für Token
+# LLM = Autocomplete auf Steroiden
 
 <div class="text-center text-xl mb-4 opacity-90">
 "Der Hund läuft über die ___"
@@ -222,60 +183,27 @@ Klingt nach einem "stochastischen Papagei" — und viele sehen es genau so.
   <RoughLine :x1="40" :y1="200" :x2="660" :y2="200" />
 </RoughSvg>
 
-Das LLM würfelt nicht — es **gewichtet**. Jedes nächste Token ist eine Wahrscheinlichkeitsverteilung über das gesamte Vokabular.
-
----
-
-# Aber vielleicht ist es mehr
-
-> "It's very clear that we understand language in much the same way as these large language models."
->
-> — Geoffrey Hinton
-
-Wir verstehen unser eigenes Gehirn nicht gut genug, um sicher zu sagen, dass es *anders* funktioniert.
-
-Kontrovers — aber Hinton (Turing-Award, "Godfather of AI") gehört zu denen, die das ernsthaft vertreten.
+Das LLM würfelt nicht  es **gewichtet**. Jedes nächste Token ist eine Wahrscheinlichkeitsverteilung. Klingt nach "stochastischem Papagei" — viele sehen es genau so.
 
 ---
 
 # Vom LLM zum Agent
 
-<RoughSvg :width="920" :height="240" :padding="16" :roughness="1.4" :seed="7">
-  <RoughRect :x="0"   :y="60" :width="180" :height="90" variant="muted"   fill-style="hachure" />
-  <RoughRect :x="235" :y="60" :width="180" :height="90" variant="default" fill-style="hachure" />
-  <RoughRect :x="470" :y="60" :width="180" :height="90" variant="muted"   fill-style="hachure" />
-  <RoughRect :x="705" :y="60" :width="180" :height="90" variant="accent"  fill-style="hachure" />
-
-  <RoughText :x="90"  :y="92"  variant="label">USER</RoughText>
-  <RoughText :x="90"  :y="125" variant="subtitle">Frage</RoughText>
-
-  <RoughText :x="325" :y="92"  variant="label">LLM</RoughText>
-  <RoughText :x="325" :y="125" variant="subtitle">denkt nach</RoughText>
-
-  <RoughText :x="560" :y="92"  variant="label">WISSEN</RoughText>
-  <RoughText :x="560" :y="125" variant="subtitle">Trainingsdaten</RoughText>
-
-  <RoughText :x="795" :y="92"  variant="label">OUTPUT</RoughText>
-  <RoughText :x="795" :y="125" variant="subtitle">Halluzination</RoughText>
-
-  <RoughArrow :x1="180" :y1="105" :x2="235" :y2="105" />
-  <RoughArrow :x1="415" :y1="105" :x2="470" :y2="105" />
-  <RoughArrow :x1="650" :y1="105" :x2="705" :y2="105" />
-
-  <RoughText :x="442" :y="200" variant="subtitle">kein Web · keine Tools · keine Echtzeit</RoughText>
-</RoughSvg>
+<IsolatedLLM />
 
 ---
 
 # Tools verändern alles
 
-Erst als OpenAI **Web-Suche als Tool** integriert hat, konnte ChatGPT die Frage wirklich beantworten.
+<div class="flex justify-center">
+  <AgentDiagram />
+</div>
 
-Genau das ist ein **Agent**:
+<div v-click="5" class="text-sm opacity-90 mt-2">
 
-> Ein LLM als "Hirn" + die Fähigkeit, **Tools** zu benutzen, um eine Aufgabe **eigenständig** zu Ende zu bringen.
+**Agent** = LLM als "Hirn" + **Tools**, um eine Aufgabe **eigenständig** zu Ende zu bringen.
 
-LLM denkt. Tools handeln. Agent kombiniert beides.
+</div>
 
 ---
 layout: image
@@ -308,6 +236,14 @@ Anthropic, Research Preview im **Februar 2025** — CLI-basierter Coding-Agent, 
 Allgemeiner Agent mit Tools — perfekt, um QA-Aufgaben zu automatisieren.
 
 ---
+
+# Claude Code in Action
+
+<div class="flex justify-center">
+  <video src="/claudecode.mp4" controls muted loop class="rounded-lg max-h-[420px]" />
+</div>
+
+---
 layout: image
 image: /agent-tools.png
 backgroundSize: contain
@@ -315,59 +251,89 @@ backgroundSize: contain
 
 ---
 
-# nanocode — mein eigenes Claude Code
+# Der ganze Trick in 4 Zeilen
 
-Um zu verstehen, wie Claude Code wirklich funktioniert, hab ich es nachgebaut: **nanocode**, ~350 Zeilen TypeScript.
+<div class="flex justify-center">
+  <AgentLoopDiagram />
+</div>
 
-```ts
-async function agentLoop(messages, systemPrompt) {
-  const response = await callApi(messages, systemPrompt)
-  const toolResults = await processToolCalls(response.content)
+<div v-click="5" class="text-sm opacity-90 mt-2">
 
-  if (toolResults.length === 0) return messages
-  return agentLoop([...messages, ...toolResults], systemPrompt)
-}
-```
+Mehr ist ein Agent nicht. **LLM denkt, Tools handeln, Loop wiederholt.**
 
-Der ganze Trick: **LLM aufrufen → Tools ausführen → Loop**. Mehr ist es nicht.
-
----
-
-layout: default
----
-
-# Mein Spielplatz: Workout Tracker
-
-<div class="flex justify-center items-center mt-4">
-  <div class="relative" style="width: 300px; height: 620px; background: #111; border: 8px solid #222; border-radius: 44px; box-shadow: 0 0 0 2px #333, 0 20px 60px rgba(0,0,0,0.6); padding: 12px;">
-    <div class="absolute left-1/2 -translate-x-1/2 top-3 w-24 h-5 bg-black rounded-full z-10"></div>
-    <iframe src="https://workout-tracker-ten-pi.vercel.app/" class="w-full h-full rounded-3xl bg-black"></iframe>
-  </div>
 </div>
 
 ---
 
+# Claude Code installieren
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash   # macOS/Linux (alt: brew install --cask claude-code)
+claude           # startet den Agent im aktuellen Ordner – Login per Browser beim ersten Start
+```
+
+**Was du brauchst:**
+
+- Einen **Anthropic-Account** – Claude Pro ab ~20 €/Monat deckt die meisten Use-Cases ab (Max ab ~100 $/Monat, oder API-Key Pay-as-you-go)
+- Ein Terminal deiner Wahl
+
+→ Nach 2 Minuten läuft der Agent auf deinem Rechner. Montag einfach ausprobieren.
+
+---
+
+<div class="flex justify-center items-center h-full">
+  <div class="relative" style="width: 360px; height: 640px; background: #111; border: 8px solid #222; border-radius: 40px; box-shadow: 0 0 0 2px #333, 0 20px 60px rgba(0,0,0,0.6); padding: 10px;">
+    <div class="absolute left-1/2 -translate-x-1/2 top-2 w-20 h-4 bg-black rounded-full z-10"></div>
+    <iframe
+      src="https://workout-tracker-ten-pi.vercel.app/"
+      class="w-full h-full rounded-3xl bg-black phone-iframe"
+      style="scrollbar-width: none;"
+    ></iframe>
+  </div>
+</div>
+
+<style>
+.phone-iframe::-webkit-scrollbar { display: none; }
+</style>
+
+---
+layout: statement
+---
+
 # Was macht einen guten QA-Engineer aus?
-
-> "To be an excellent tester means to **explore, experiment, study, model, learn, collaborate, investigate**."
->
-> — James Bach & Michael Bolton, *Rapid Software Testing*
-
-Nicht: Test-Cases abhaken. Sondern: **Probleme finden, die wirklich wehtun — bevor es zu spät ist.**
-
-Genau diese Eigenschaften wollen wir einem Agent geben.
 
 ---
 
 # Unsere Idee
 
-Wir wollen einen **AI-Agent** bauen, der:
+Ein **QA-Agent**, der in **GitHub Actions** läuft und anhand der **PR-Beschreibung** prüft, ob die Implementierung wirklich umgesetzt wurde.
 
-- 🎯 automatisch prüft, ob ein **Ticket korrekt umgesetzt** wurde
-- 🐛 selbstständig **Edge Cases** findet
-- 🧠 testet wie ein **guter QA-Engineer**
+<v-clicks>
 
-Kein Skript. Kein starres Framework. Ein Agent mit einem Auftrag.
+- liest die **PR-Description** als Auftrag
+- findet selbstständig **Edge Cases**
+- testet wie ein **guter QA-Engineer**
+
+</v-clicks>
+
+<v-click>
+
+**Wie kommen wir dahin?**
+
+</v-click>
+
+<v-clicks>
+
+1. Erst verstehen, wie wir den Agent **lokal** aufsetzen
+2. Dann ab in die **GitHub Actions** Pipeline
+
+</v-clicks>
+
+---
+layout: image
+image: /qa-smoke-test-report.png
+backgroundSize: contain
+---
 
 ---
 
@@ -381,31 +347,114 @@ Genau das müssen wir ihm geben.
 
 ---
 
-# Wie geben wir dem Agent Tools?
+# Wie geben wir dem Agent Browser-Tools?
 
-Zwei Wege:
+Zwei Wege, dem Agent neue Fähigkeiten zu geben:
 
-- 🔌 **MCP** (Model Context Protocol) — vor ein paar Monaten der Hot Shit
-- 💻 **CLI** — heute oft die bessere Wahl
+- 🔌 **MCP** (Model Context Protocol)
+- 💻 **CLI** — ein ganz normales Terminal-Tool
 
-Bekanntes Beispiel: **Playwright MCP**. Du startest einen MCP-Server, der Browser-Tools an den Agent durchreicht.
+Schauen wir uns erst an, was MCP eigentlich ist.
 
 ---
 
-# Warum CLI > MCP für Coding-Agents
+# Was ist MCP?
 
-MCP pipet **alles** in den LLM-Kontext: Snapshots, Screenshots, DOM. Auch wenn der Agent es gar nicht lesen muss.
+<div class="text-sm opacity-90">
 
-CLI schreibt Outputs **auf die Festplatte**. Der Agent entscheidet selbst, was er liest.
+**Model Context Protocol** — Anthropic-Standard, damit Agents mit externen Tool-Servern reden. Server stellt Tools bereit, Agent ruft per JSON-RPC auf — **jede Antwort fließt direkt in den LLM-Kontext**.
+
+</div>
+
+<div class="flex justify-center mt-2">
+  <MCPDiagram />
+</div>
+
+---
+
+# Und CLI?
+
+Kein Server. Kein Protokoll. Einfach ein Kommandozeilen-Tool, das der Agent über sein Bash-Tool aufruft.
+
+```bash
+agent-browser snapshot -i > snapshot.yml
+agent-browser screenshot -o shot.png
+```
+
+- Output landet **auf der Festplatte** (oder als stdout)
+- Der Agent entscheidet **selbst**, was er liest: `cat snapshot.yml`, `head -20 shot.meta.json`
+- Nichts fließt automatisch in den Context
+
+---
+
+# Der Unterschied
+
+**MCP pusht Daten in den Context. CLI lässt den Agent pullen.**
+
+MCP pipet bei jedem Tool-Call alles zurück: Snapshot, Screenshot, DOM — auch wenn der Agent es gar nicht braucht.
 
 | | MCP | CLI |
 |---|---|---|
-| Token-Verbrauch (Demo) | 114 K | **26.8 K** |
+| Token-Verbrauch (gleiche Demo) | 114 K | **26.8 K** |
 | Faktor | 1× | **~4× weniger** |
 
-Coding-Agents wie Claude Code haben Filesystem-Zugriff → CLI gewinnt.
+Coding-Agents wie Claude Code haben eh Filesystem + Bash → der MCP-Layer ist für Browser-Tools schlicht redundant.
 
 <div class="text-xs opacity-60 mt-4">Quelle: Playwright CLI vs MCP — A New Tool for Your Coding Agent</div>
+
+---
+
+# Wo MCP trotzdem Sinn macht
+
+CLI gewinnt dort, wo das Modell die Tools schon kennt: `git`, `docker`, `kubectl`, `bash`.
+
+<v-click>
+
+MCP gewinnt dort, wo es gar kein CLI gibt.
+
+</v-click>
+
+<v-clicks>
+
+- **SaaS ohne CLI**: Figma, Notion, Linear, Salesforce, Workday
+- **Multi-Tenant**: OAuth pro User, Zugriff einzeln widerrufbar
+- **Enterprise Governance**: strukturierte Audit-Logs statt `bash history`
+
+</v-clicks>
+
+<v-click>
+
+Für unseren QA-Agent bleibt CLI richtig. Für einen Agent, der Linear-Tickets zieht und Figma-Designs prüft, wäre es MCP.
+
+</v-click>
+
+---
+
+# OpenClaw: nur CLIs, keine MCPs
+
+**Peter Steinberger** (PSPDFKit, $100M Exit) baut mit **OpenClaw** einen persönlichen AI-Agent, der bewusst **kein MCP** unterstützt.
+
+<v-clicks>
+
+- ~10 eigene CLIs für OpenClaw gebaut, dafür von OpenAI abgeworben
+- Sein Satz: *"MCP was a mistake. Bash is better."*
+- Alles läuft über **Skills** (Markdown + CLI-Aufrufe)
+
+</v-clicks>
+
+<v-click>
+
+Für Tools, die es nur als MCP gibt, hat er einen **Konverter** geschrieben: **MCP → CLI**. Jede MCP-Funktion wird zum normalen Command-Line-Aufruf, dynamisch, ohne Restart.
+
+</v-click>
+
+<v-click>
+
+Dieselbe Idee wie bei uns: dem Agent die Tools geben, die auch Menschen benutzen.
+
+</v-click>
+
+<div class="text-xs opacity-60 mt-4">Quelle: steipete.me, oreateai.com/blog</div>
 
 ---
 
@@ -434,9 +483,39 @@ agent-browser screenshot
 
 `snapshot -i` gibt einen Accessibility-Tree zurück, in dem **jedes Element eine ref wie `@e1` bekommt**. Keine harten Selektoren. Layout ändert sich? Egal — Claude liest den neuen Snapshot und arbeitet mit den neuen refs.
 
+```bash
+- link "zur Homepage" [ref=e1]
+- searchbox "Wonach suchst du?" [ref=e2]
+- button "Suche abschicken" [ref=e3]
+```
+
+---
+
+<div class="flex justify-center">
+  <img src="/otto-a11y-dom.png" class="rounded-lg max-h-[420px]" />
+</div>
+
+---
+
+# Agent Browser in Action
+
+<div class="flex justify-center">
+  <video src="/userAgent.mp4" controls muted loop class="rounded-lg max-h-[480px]" />
+</div>
+
+---
+
+# Snapshot Output
+
+<div class="flex justify-center">
+  <img src="/qa-smoke-test-report.png" class="rounded-lg max-h-[480px]" />
+</div>
+
 ---
 
 # Der Loop
+
+<v-clicks>
 
 1. `snapshot -i` → Claude sieht die Seite
 2. Claude überlegt: "Ich teste die Navigation"
@@ -445,28 +524,7 @@ agent-browser screenshot
 5. `console` → keine Errors
 6. ✅ Test bestanden
 
-Genau wie ein menschlicher Tester — nur ohne Kaffeepause.
-
----
-layout: image
-image: /claude-interactive.png
-backgroundSize: contain
----
-
----
-
-# Normalerweise: `claude` interaktiv
-
-Du tippst `claude`, bekommst einen REPL-Prompt, chattest hin und her. Mensch fragt, Agent antwortet, Mensch fragt nach.
-
-Gut fürs Explorieren — aber:
-
-- ❌ Nicht scriptbar
-- ❌ Nicht in CI nutzbar
-- ❌ Kein maschinenlesbarer Output
-- ❌ Du musst dabeisitzen
-
-Für einen **automatisierten QA-Agent** brauchen wir etwas anderes.
+</v-clicks>
 
 ---
 
@@ -486,6 +544,25 @@ claude -p "deine aufgabe hier" --allowedTools "Bash(agent-browser*)"
 
 # Wie `claude -p` funktioniert
 
+````md magic-move {lines: true}
+```bash
+claude -p "<prompt>"
+```
+```bash
+claude -p "<prompt>" \
+  --allowedTools "Bash(agent-browser*)"
+```
+```bash
+claude -p "<prompt>" \
+  --allowedTools "Bash(agent-browser*)" \
+  --append-system-prompt "Du bist ein Senior QA-Engineer."
+```
+```bash
+claude -p "<prompt>" \
+  --allowedTools "Bash(agent-browser*)" \
+  --append-system-prompt "Du bist ein Senior QA-Engineer." \
+  --max-turns 15
+```
 ```bash
 claude -p "<prompt>" \
   --allowedTools "Bash(agent-browser*)" \
@@ -494,13 +571,7 @@ claude -p "<prompt>" \
   --model opus \
   --output-format json
 ```
-
-Claude startet, liest den Prompt, ruft Tools in einer Schleife auf — und beendet sich, sobald die Aufgabe erledigt ist.
-
-- **Kein interaktiver State** — jeder Call ist frisch
-- **Stdin/Stdout-freundlich** — perfekt für Pipes und Scripts
-- **Exit-Code** sagt dir, ob's geklappt hat
-- **CI-tauglich** — genau das nutzen wir gleich in GitHub Actions
+````
 
 ---
 
@@ -523,21 +594,74 @@ Ein Befehl. Claude öffnet den Browser, klickt sich durch, schaut in die Console
 
 ---
 
-# Persona vom Task trennen
+# Das Ergebnis
+
+| # | Test | Result |
+|---|------|--------|
+| 1 | **Homepage laden** | **PASS** — Onboarding-Overlay erscheint, nach "Skip" zeigt die Homepage Kalender, "Start New Workout", "Log Past Workout", "Quick Timer" und "Recent Workouts" korrekt an. |
+| 2 | **Navigation (2 Links)** | **PASS** — "Workouts" navigiert zur Workouts-Seite (Templates/Benchmarks/Progressions Tabs mit 4 Templates sichtbar). "Exercises" navigiert zur Exercise-Library (173 Exercises mit Filtern nach Muskelgruppe und Equipment). |
+| 3 | **JS-Errors (Console)** | **PASS** — Keine JavaScript-Fehler oder unhandled Promise-Rejections gefunden. |
+
+**Gefundene Bugs:** Keine. Die App lädt sauber, Navigation funktioniert, keine Console-Errors.
+
+---
+
+# Aber Moment — testet das wirklich wie ein QA-Engineer?
+
+"Lädt die Homepage?" und "klick 2 Links" ist kein QA-Test — das ist ein Smoke-Test. Also habe ich Claude Code selbst gefragt:
+
+> *"Wie können wir den Prompt verbessern damit es wie ein echter QA-Engineer testet?"*
+
+**Die Antwort:**
+
+- 🎭 **Persona + Rubrik**: Senior QA, Given/When/Then, Severity-Skala
+- 🛤️ **Echte User-Journeys** statt Klick-Tests — **Outcomes** verifizieren
+- ❌ **Negative Tests**: leere Forms, ungültige Werte, doppeltes Klicken
+- 🔄 **Reload-Resilienz**: überlebt der State einen Reload?
+- 📋 **Strukturierter Output**: Expected vs Actual, Repro-Schritte
+
+→ Tradeoff: längere Läufe, höhere Kosten — dafür **echte Bugs** statt "alles grün".
+
+---
+
+# Der verbesserte Prompt
 
 ```bash
-claude -p "Teste Homepage, Navigation, Console-Errors..." \
-  --append-system-prompt "Du bist ein Senior QA-Engineer. \
-Nutze immer 'agent-browser snapshot -i'. Sei knapp \
-und strukturiert in deinen Reports." \
+claude -p "Teste workout-tracker als Senior QA-Engineer mit agent-browser.
+
+JOURNEYS:
+1. Workout loggen (Happy Path): Start → Exercise → Set eintragen
+   → speichern → verifiziere in 'Recent Workouts'
+2. Negative Test: leere Felder speichern — gibt es Validation?
+3. Exercise Library: Muskelgruppe filtern → reduziert sich die Anzahl?
+4. Reload-Resilienz: State nach Reload noch da?
+5. Console-Errors mitloggen.
+
+Pro Test: Given/When/Then, Expected vs Actual,
+Severity (CRITICAL/MAJOR/MINOR/NONE), Repro falls Bug." \
+  --append-system-prompt 'Du bist Senior QA-Engineer.
+    Evidenzbasiert. Verifiziere durch Snapshots, nicht Annahmen.' \
   --allowedTools "Bash(agent-browser*)" \
-  --max-turns 15
+  --max-turns 80
 ```
 
-- `--append-system-prompt` — **Persona & Verhalten** (gilt jeden Turn)
-- Task-Prompt — **was getestet werden soll**
-- `--max-turns` — Hard-Limit gegen ausufernde Loops
-- `--allowedTools` — Whitelist, was der Agent ausführen darf
+---
+
+# Das neue Ergebnis: **MINOR_ISSUES** (statt "alles PASS")
+
+| # | Finding | Severity |
+|---|---------|----------|
+| 1 | Set-Counter zählt leere Default-Sets — zeigt "3 Sets" statt "1" | 🟡 MINOR |
+| 2 | Alle Workouts heißen default "Evening Workout" — Recent-Liste unbrauchbar | 🟡 MINOR |
+| 3 | Orphan `/workout/active` State beim Initial-Load | 🟡 MINOR |
+| 4 | Validation blockt leere Sets korrekt | ✅ |
+| 5 | Filter reduziert 173 → 21 (Chest) korrekt | ✅ |
+| 6 | State überlebt Reload (Resume Workout) | ✅ |
+| 7 | Keine Console-Errors während aller Journeys | ✅ |
+
+**Repro Finding #1:** Start Workout → 1 Exercise → nur Set 1 befüllen + complete → End Workout → Recent zeigt "3 Sets" statt "1 Set".
+
+→ Derselbe Agent. Derselbe Browser. **Anderer Prompt — andere Bugs.**
 
 ---
 
@@ -557,6 +681,18 @@ Gehe bis zur Kasse — schließe NICHT ab." \
 Derselbe Loop — andere Aufgabe. Auch nutzbar für Data Processing, File Organization, API Calls, Shell Aliases. Dieselben Flags gibt's im **Claude Agent SDK** (TS/Python).
 
 💡 Wir bleiben heute beim QA-Use-Case.
+
+---
+layout: image
+image: /otto-laufschuhe.png
+backgroundSize: contain
+---
+
+---
+layout: image
+image: /a11y-audit-otto.png
+backgroundSize: contain
+---
 
 ---
 
@@ -585,326 +721,23 @@ finding bugs before users do.
 
 ---
 
-# System Prompt = stabiler Kontext
+# Context Window
 
-Was im System Prompt steht, **muss nicht in jedem Turn neu geschickt werden** — und es ist die ganze Zeit *cache-bar*.
-
-Im `qa-system-prompt.md` (200 Zeilen):
-
-- 🧭 **App-Map** — Navigation, Key Flows, UI-Patterns die Quinn "schon kennt"
-- ⚠️ **Known Gotchas** — `fill` triggert kein v-model → ArrowUp/Down nudgen
-- 🛠️ **Tool-Doku** — `agent-browser` Commands, Refs, semantische Locator
-- 📋 **Verdict-Rubrik** — `HEALTHY` / `MINOR_ISSUES` / `CRITICAL_BUGS`
-- ♿ **Report-Schema** — welche Sektionen `qa-report.md` haben muss
-
-→ Jeder dieser Punkte ist ein Fehler, den Quinn **nicht** mehr machen wird. Lessons-Learned, fest verdrahtet.
+<ContextWindowSlider />
 
 ---
 
-# Context Window — was reinkommt, was nicht
+# Was ist ein Skill? (Progressive Disclosure)
 
-Das Context Window ist endlich (200k Tokens). Jeder Tool-Output frisst davon.
+Ein **Skill** ist ein Ordner mit `SKILL.md` — Claude lädt ihn in drei Stufen:
 
-```
-┌─────────────────────────────────────────┐
-│ System Prompt (Quinn-Persona, Tools)    │ ← stabil, gecached
-├─────────────────────────────────────────┤
-│ User Prompt (PR-Fixture, ACs)           │ ← pro Run
-├─────────────────────────────────────────┤
-│ Turn 1: snapshot -i  → 1.2kb (text)     │ ✓ kompakt
-│ Turn 2: click @e2    → "ok"             │
-│ Turn 3: snapshot -i  → 1.4kb            │
-│ ...                                      │
-│ Turn 47: Write qa-report.md             │
-└─────────────────────────────────────────┘
-```
+<SkillLoadDiagram />
 
-**Bewusste Entscheidungen im Prompt:**
+- **Startup** — Nur `name` + `description` aller Skills im System-Prompt (~8k Char-Budget, 1% Context-Window). Claude weiß *dass* es den Skill gibt.
+- **Invoke** — User tippt `/skill-name` oder Claude matcht die Description. Kompletter Markdown-Body wird als *eine Message* injiziert — bleibt bis Session-Ende.
+- **Execute** — Script-Code landet **nie** im Kontext, nur das Output. Referenzierte `.md`-Files werden nur bei Bedarf geladen.
 
-- `snapshot -i` (Text-Tree) statt `screenshot` (PNG = 2 Turns + viel mehr Tokens)
-- "Success → ✓. Failure → full output." — erfolgreiche `click`s liefern nur `ok`
-- **Refs (`@e2`)** statt voller Selektoren
-- Max 100 Turns hartes Limit → der Agent muss priorisieren
-
-→ Backpressure ist nicht nur "weniger Output" — es ist **was darf überhaupt in den Context rein**.
-
----
-
-# Backpressure im Agent-Loop
-
-Klassisch: Backpressure = Flow Control in Streams.
-
-**Im Agent-Kontext (2025):** Flow Control **in den Context Window rein** — der Agent soll nicht an seinem eigenen Tool-Output ersticken.
-
-```bash
-pnpm test --run
-# ❌ 2000 Zeilen Vitest-Output in den Context
-# → Agent verliert den Faden, Tokens brennen
-```
-
-**Lösung** (Dex Horthy, HumanLayer):
-
-> **Success → ✓. Failure → full output.**
-
-Erfolg ist ein Zeichen. Fehler bekommt die volle Diagnose. Der Agent iteriert auf **echten Signalen**, nicht auf Rauschen.
-
-<div class="text-xs opacity-60 mt-2">Quelle: hlyr.dev/blog/context-efficient-backpressure</div>
-
----
-
-# `claude -p` — Agent lokal testen
-
-Bevor der QA-Agent in CI läuft, will ich den **Prompt iterieren** — ohne jedes Mal pushen zu müssen.
-
-```bash
-scripts/test-claude-qa-local.sh verify fixtures/test-prs/auto-rest.md
-```
-
-Das Script ruft denselben `claude -p` auf wie der GitHub Workflow:
-
-```bash
-claude -p "$PROMPT" \
-  --model claude-opus-4-6 \
-  --max-turns 100 \
-  --allowedTools "Bash(agent-browser *),Write,Read,Grep" \
-  --append-system-prompt "$SYSTEM_PROMPT" \
-  --output-format stream-json --verbose
-```
-
-- **PR-Fixture** statt echtem PR → reproduzierbar
-- **Lokaler Dev-Server** auf `:5173` → schneller Loop
-- **Gleicher Prompt** wie CI → kein Drift
-
----
-
-# Stream-JSON → Live-Reporting
-
-`--output-format stream-json` emittiert **ein JSON-Event pro Turn**. Mit `tee` + `jq` wird daraus ein Live-Log:
-
-```
-◆ session abc123 · model claude-opus-4-6 · tools 7
-→ Bash $ agent-browser open http://localhost:5173
-← Snapshot captured (1.2kb)
-→ Bash $ agent-browser fill "Weight" 20
-… Logging set 1, watching for rest countdown…
-→ Write qa-report.md
-◆ done · success · 47 turns · $0.83
-```
-
-Jeder Run wird **archiviert**:
-
-```
-qa-archive/20260412-140925-verify/
-├── qa-stream.ndjson      # roher Event-Stream
-├── qa-structured-output.json
-├── qa-report.md          # finaler Markdown-Report
-└── pr-fixture.md         # was getestet wurde
-```
-
-→ Prompts iterieren, Runs vergleichen, **nichts geht verloren**.
-
----
-
-# Zwei lokale Runs — was rauskam
-
-Selber PR (*auto-rest timer + resume workout*), zwei Runs nach Prompt-Tweaks:
-
-| Run | Verdict | Findings |
-|-----|---------|----------|
-| `13:47 verify` | MINOR_ISSUES | AC3 SKIP (kein Rest-Config-UI), a11y-Suggestion |
-| `14:09 verify` | MINOR_ISSUES | + "0 blocks" Copy-Bug, fehlendes `role="timer"`, Resume-Banner ist global statt page-local |
-
-**Run 2 hat mehr gefunden** — nicht weil das Modell schlauer war, sondern weil der Prompt nach Run 1 präziser wurde:
-
-- explizit nach a11y-Tree fragen (`snapshot -i`), nicht nur DOM
-- AC-Wording mit Implementierung abgleichen, nicht nur "funktioniert es?"
-- Console-Errors aktiv abfragen statt passiv mitloggen
-
-→ **Der lokale Loop ist das, was den CI-Run gut macht.**
-
----
-
-# Claude Code schreibt meine Tests
-
-Der **primäre** Use Case von Claude Code in meinem Workout Tracker ist nicht Feature-Code — es ist **Tests schreiben**.
-
-Ich sag: *"schreib mir einen Integration-Test für den Complete-Set Flow"* — und Claude:
-
-- liest den bestehenden Code
-- mountet die ganze App mit Router + Pinia
-- klickt sich mit `page.getByRole(...)` durch
-- assertet die Outcomes
-
-Und das Beste: Tests sind die **Sicherheit**, die den Rest erst möglich macht. Wenn AI den Feature-Code schreibt, brauch ich ein **robustes Safety Net** — sonst merk ich Regressions erst in Production.
-
----
-
-# Meine umgekehrte Testing Pyramid
-
-Klassisch: viele Unit Tests, wenig E2E. Bei mir **genau umgedreht:**
-
-- 🚀 **~70% Integration Tests** — echter Browser, echte Flows
-- ⚡ **~20% Composable Unit Tests** — pure Logic
-- 🎨 **~10% a11y + Visual Regression** — kritische Screens
-
-**Warum invertiert?** Weil Vitest Browser Mode Integration Tests **schnell und stabil** macht. Unit Tests testen Code; Integration Tests testen **Verhalten** — und Verhalten ist, was der User sieht.
-
-Für Claude gilt: je näher am User, desto eindeutiger das Feedback. *"Button klappt nicht"* ist ein besseres Signal als *"Funktion X returned undefined"*.
-
----
-layout: image
-image: /testing-pyramid.png
-backgroundSize: contain
----
-
----
-
-# Vitest Browser Mode statt JSDOM
-
-JSDOM ist eine **Simulation** eines Browsers in Node. Vitest Browser Mode startet **echtes Chromium** via Playwright.
-
-| | JSDOM | Vitest Browser Mode |
-|---|---|---|
-| Umgebung | Fake Browser in Node | Echtes Chromium |
-| Genauigkeit | Gut für Logic, schlecht für CSS/Layout | 100% — es ist ein echter Browser |
-| Meine Suite (82 Tests) | **53.7s** 🐢 | **13.6s** 🚀 (~4× schneller) |
-| API | Testing Library | Built-in `page` mit Playwright Locators |
-
-```ts
-await userEvent.click(page.getByRole('button', { name: /start/i }))
-await expect.element(page.getByText('Set Completed')).toBeVisible()
-```
-
-→ Derselbe Locator, den `agent-browser` später in der QA-Phase nutzt. **Eine mentale Modell, zwei Einsatzorte.**
-
----
-
-# 📣 Shameless Plug
-
-Tiefer Dive in Vitest Browser Mode und Black-Box-Testing gibt's von mir auf der **TanCon in Leipzig im September**.
-
-Hier geht's heute primär um den **QA-Agent-Teil** — in Leipzig dann um die Test-Strategie selbst.
-
----
-layout: image
-image: /tancon-talk.png
-backgroundSize: contain
----
-
----
-
-# 🙋 Kurze Frage
-
-Wer von euch weiß, was ein **Skill** ist?
-
-<div class="opacity-60 mt-8 text-lg">(im Claude-Code- / Agent-Kontext)</div>
-
----
-
-# Bonus 2: mutation-testing Skill
-
-**Coverage lügt.** 100% Coverage heißt nicht, dass deine Tests wirklich was prüfen:
-
-```ts
-function add(a: number, b: number) { return a + b }
-
-it('adds', () => { add(2, 2) }) // 100% Coverage — ohne Assertion!
-```
-
-**Mutation Testing dreht die Frage um:**
-
-> *"Wenn ich den Code kaputt mache — schlagen die Tests an?"*
-
-Code wird mutiert (`+` → `-`, `>` → `>=`, `&&` → `||`), Tests laufen. Überlebt der Mutant → **Test-Lücke gefunden.**
-
----
-
-# Warum ein Skill statt Stryker?
-
-**Stryker** ist das Gold-Standard-Tool — aber: **kein Support für Vitest Browser Mode** (Playwright/Chromium).
-
-→ Lösung: Claude Code als **manueller Mutation-Tester**.
-
-Der Skill definiert einen simplen Loop:
-
-1. Mutation anwenden (ein Edit)
-2. `pnpm test --run`
-3. Tests failed? → **KILLED** ✅
-4. Tests passed? → **SURVIVED** ❌ (Test-Lücke!)
-5. Original wiederherstellen
-6. Nächste Mutation
-
-**Mein Settings-Feature**: 38% Score — 8 von 13 Mutanten überlebten. Tests sahen gut aus, waren aber löchrig.
-
----
-
-# Kurzer Zwischenstopp — was haben wir bis jetzt?
-
-- 🧠 **LLM → Agent**: LLM + Tools + Loop = Agent
-- 🛠️ **Claude Code**: general agent mit Read, Write, Bash, Grep
-- 🌐 **Agent Browser**: CLI statt MCP — Snapshot-and-ref, ~4× weniger Tokens
-- ⚡ **`claude -p`**: scriptbar, `--allowedTools`, `--max-turns`
-- 🎭 **Persona vs. Task**: `--append-system-prompt` trennt Verhalten vom Auftrag
-- 📦 **System Prompt + Context Window**: stabil, cache-bar, backpressure-aware
-- 🧪 **Safety Net**: umgekehrte Test-Pyramide + Mutation Testing
-
-Bis hier: ein lokaler QA-Agent mit echtem Safety Net.
-
-→ Jetzt: **Verifier im Loop**, **Spec-Driven Development** und am Ende **GitHub Actions** — der Agent läuft ohne dich.
-
----
-
-# Backpressure = Verifier im Loop
-
-Die breitere Definition: **alles, was dem Agent automatisiertes Feedback gibt**, bis das Ziel erreicht ist.
-
-- 🧪 Tests (`pnpm test`)
-- 🔤 Typechecker (`tsc`)
-- 🧹 Linter (`eslint`)
-- 🪝 Pre-Commit Hooks
-- 🌐 **Browser-Verifier** ← unser QA-Agent!
-
-Der Implementation Agent bekommt einen Verifier **in seinen Loop** — und muss so lange weiterbauen, bis der Verifier grün sagt.
-
-→ **SDD liefert die Spec. Backpressure erzwingt sie.**
-
----
-
-# Spec-Driven Development
-
-Der naive Weg: *"Claude, bau mir Feature X"* → Vibe Coding, Halluzinationen, Mist.
-
-**Spec-Driven Development** dreht das um:
-
-> *"Specifications don't serve code — code serves specifications."*
-> — GitHub Spec Kit (Sep 2025)
-
-Statt direkt zu coden, produziert der Agent **erst** ein strukturiertes Spec-Artefakt. Code ist nur noch die **ausführbare Form** der Spec.
-
-Populär gemacht durch **GitHub's Spec Kit** — funktioniert mit Claude Code, Copilot, Cursor, Gemini CLI.
-
----
-
-# Mein SDD-Flow
-
-```mermaid
-flowchart LR
-    A[Jira Ticket] --> B[Research Agent<br/>+ Context7 MCP]
-    B --> C[Tech Ticket<br/>Spec + Plan]
-    C --> D[Implementation<br/>Agent]
-    D --> E[test-browser Skill<br/>Agent Browser]
-    E --> F{passt?}
-    F -->|nein| D
-    F -->|ja| G[PR]
-```
-
-1. **Jira Ticket** — fachliche Anforderung
-2. **Research Agent** nutzt **Context7 MCP** → aktuelle Docs statt veraltetem Training
-3. **Tech Ticket** — Spec, Technologien, Edge Cases, Non-Goals
-4. **Implementation Agent** baut gegen die Spec
-5. **Verifier Agent** testet im echten Browser
-
-Jede Phase ist ein **Review-Checkpoint** für mich.
+→ Hunderte Skills installierbar ohne Context-Explosion. Quelle: [code.claude.com/docs/en/skills](https://code.claude.com/docs/en/skills)
 
 ---
 
@@ -924,47 +757,8 @@ Ein Skill, den der Implementation Agent **selbst aufrufen** kann — um zu prüf
 Kein statischer E2E-Test. Der Agent liest die Diff, **entscheidet selbst**, welche Seiten relevant sind, und testet sie im echten Browser.
 
 ---
-
-# `/simplify` — Post-Implementation Cleanup
-
-Gebündelter Claude Code Skill (Boris Cherny / Anthropic).
-
-**Was er macht:**
-
-1. `git diff` → scoped auf die aktuellen Änderungen
-2. Spawnt **drei parallele Review-Subagents**:
-   - ♻️ **Reuse** — was gibt es schon?
-   - ✨ **Quality** — Code-Smells, Over-Engineering
-   - ⚡ **Efficiency** — unnötige Komplexität
-3. Aggregiert Findings, **fixt automatisch**
-
-Explizit **nach** der Implementation. Kein Linter-Ersatz — killt Duplikation und Over-Engineering, bevor der PR zum Menschen geht.
-
----
 layout: image
 image: /claude-review.png
-backgroundSize: contain
----
-
----
-
-# `/batch` — Parallel Work Orchestration
-
-Auch ein bundled Skill. Für Aufgaben wie *"migriere N Files auf den neuen Pattern"*.
-
-**Drei Phasen:**
-
-1. **Plan** — zerlegt in 5–30 gleich große, unabhängige Units mit E2E-Test-Rezept
-2. **Fan-out** — ein Background Agent pro Unit, jeder in eigenem **Git Worktree**, parallel
-3. **Track** — Status-Tabelle, sammelt PR URLs
-
-Jeder Worker ruft am Ende `/simplify` auf, läuft Tests, macht Commit + PR.
-
-→ Aus "sequentieller Slog" wird ein **Fan-out von verifizierten PRs**.
-
----
-layout: image
-image: /batch-result.png
 backgroundSize: contain
 ---
 
@@ -993,29 +787,6 @@ layout: image
 image: /pr-136.png
 backgroundSize: contain
 ---
-
----
-
-# Isolation: Worktrees oder Cloud
-
-Wenn der Agent autonom an einem Feature baut, willst du **nicht** deinen aktuellen Branch blockieren.
-
-**Lokal — Git Worktrees:**
-
-```bash
-git worktree add ../feature-x -b feature-x
-cd ../feature-x && claude -p "..."
-```
-
-Eigener Checkout, eigener Dev-Server, eigener Port — parallel zu deiner Arbeit.
-
-**Cloud — Anbieter machen's schon:**
-
-- 🟣 **Claude Code on the Web / Sandboxes** (Anthropic)
-- 🟢 **Cursor Background Agents**
-- 🐙 **GitHub Copilot Coding Agent**
-
-Agent baut in der Cloud, test-browser verifiziert gegen einen Preview-Deploy, PR landet bei dir.
 
 ---
 
@@ -1048,166 +819,276 @@ Ein **Agent**, der bei jedem Pull Request via **GitHub Actions** automatisch pr�
 
 ---
 
-layout: section
----
-
 # Vom Laptop in die Cloud
-## GitHub Actions Workflow
+## Zwei Claudes. Ein Vertrag. Ein QA-Loop.
 
 ---
 
-# Warum überhaupt CI?
+# Der Kreislauf
 
-Bis jetzt: **ich** starte den Agent. Lokal, manuell, an meinem Rechner.
+<div class="mt-8 text-center text-2xl">
+  Ein Claude schreibt den Testplan.<br>
+  Ein anderer führt ihn aus.
+</div>
 
-Das Ziel:
+<div class="mt-6 text-center text-xl opacity-70">
+  Das PR-Template ist der Vertrag zwischen beiden.
+</div>
 
-> Jeder Pull Request bekommt automatisch einen QA-Bericht. Ohne dass jemand draufklickt.
+<div v-click class="absolute inset-0 bg-black flex items-center justify-center">
+  <QALoopDiagram />
+</div>
 
-- 🔄 PR auf → Agent testet Preview-Deploy
-- 💬 Verdict landet als Comment am PR
-- 🛑 Critical Bugs → Merge wird geblockt
+---
+layout: image
+image: /pr-136.png
+backgroundSize: contain
+---
+---
 
-Dafür brauchen wir den Agent **in GitHub Actions**.
+# Das Ergebnis zuerst
+
+Bevor wir YAML lesen: so sieht das Zielbild aus.
+
+- PR auf
+- QA-Agent läuft in GitHub Actions
+- Sticky Comment landet direkt am Pull Request
+- Critical Bugs blocken den Merge
+
+> Nicht "nice to have Doku", sondern ein ausführbarer QA-Report im Dev-Workflow.
+
+---
+---
+layout: image
+image: /qa-smoke-test-report.png
+backgroundSize: contain
+---
 
 ---
 
-# `anthropics/claude-code-action`
+# GitHub Actions in 60 Sekunden
 
-Eine **Composite GitHub Action**, die Claude Code in CI wrappt.
+Stell dir vor, das Repo hat einen Butler:
 
-```yaml
-- uses: anthropics/claude-code-action@v1
-  with:
-    anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-    prompt: "Review this PR for security issues"
-    claude_args: |
-      --allowedTools "Bash(agent-browser*)"
-      --model claude-opus-4-6
+- Ein Event passiert: PR geöffnet, synchronisiert, gelabelt
+- GitHub schaut in `.github/workflows/`
+- Ein Workflow startet
+- Darin laufen Jobs auf einer frischen VM
+- Ein Job besteht aus Steps: `run:` oder `uses:`
+
+Für diesen Talk reicht eine Mental Map:
+
+> Event → Workflow → Job → Step
+
+---
+
+# Schritt 1: `/pr` schreibt den Testplan
+
+Der erste Claude läuft **lokal** beim Entwickler und verwandelt den Diff in einen QA-fähigen PR-Body.
+
+```md
+name: pr
+description: Generate or update a structured pull request with
+summary, acceptance criteria, QA scope, risk areas,
+and executable test scenarios.
 ```
 
-Ein Step. Drin steckt: Auth, Permission-Checks, CLI-Install, Prompt-Bau, Cleanup.
+Was daran stark ist:
 
-<div class="text-xs opacity-60 mt-4">github.com/anthropics/claude-code-action</div>
-
----
-
-# Tag Mode vs Agent Mode
-
-Die wichtigste Entscheidung beim Setup.
-
-**🏷️ Tag Mode** — Reviewer schreibt `@claude` im PR, Claude antwortet im Thread. Action baut den Prompt automatisch aus PR-Daten.
-
-**🤖 Agent Mode** — `prompt:` ist gesetzt, läuft automatisch bei jedem Event. Wir geben den Prompt vor.
-
-→ Für QA wollen wir **Agent Mode**. Wir wissen genau, was getestet werden soll — kein PR-Comment-Noise im Kontext.
+- erst User-Impact, dann Implementierungsdetails
+- Acceptance Criteria als konkrete, testbare Outcomes
+- QA Scope bewusst eng und time-boxed
+- Manual Test Scenarios so geschrieben, dass QA sie direkt ausführen kann
 
 ---
 
-# Mein Stolperstein: zwei Tokens
+> Der Prompt ist kein Template. Er ist bereits QA-Training für den Dev-Agent.
 
-Hat mich einen Nachmittag gekostet:
+---
+layout: two-cols-header
+---
 
-| Token | Spricht mit | Wofür |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | Anthropic API | Claude ausführen |
-| `GITHUB_TOKEN` | GitHub API | Comments, PR-Daten, Status |
+# Der Vertrag im PR-Body
 
-**Sind nicht austauschbar.** `GITHUB_TOKEN` redet nicht mit Claude. `ANTHROPIC_API_KEY` redet nicht mit GitHub.
+::left::
 
-→ Du brauchst beide. Im Zweifel: lies die Fehlermeldung zweimal.
+Diese Sections sind nicht Doku.
+
+- `## Summary`
+- `## User Impact`
+- `## Acceptance Criteria`
+- `## QA Scope`
+- `## Risk Areas`
+- `## Manual Test Scenarios`
+- `## CI Checks`
+
+::right::
+
+Was der Vertrag leistet:
+
+- Dev und QA reden über dieselben Begriffe
+- Der zweite Agent bekommt sauberen Kontext statt Diff-Rauschen
+- Leere oder schwammige PRs fallen sofort auf
+- Das Template wird von "Pflichtfeld" zu "ausführbarer Spezifikation"
 
 ---
 
-# `claude_args` ist die Brücke
+# Schritt 2: CI liest den Vertrag
 
-**Alles**, was wir lokal mit `claude -p` lernen, funktioniert **1:1** in CI:
+Der zweite Claude liest genau diese PR-Sections wieder aus.
 
-```yaml
-claude_args: |
-  --allowedTools "Bash(agent-browser*)"
-  --append-system-prompt "You are a senior QA engineer."
-  --max-turns 20
-  --model claude-opus-4-6
-  --json-schema '{"type":"object",...}'
+```bash
+extract_section() {
+  awk -v h="## $1" '
+    $0 == h {flag=1; next}
+    flag && /^## / {flag=0}
+    flag {print}
+  ' <<<"$PR_BODY"
+}
+
+ACCEPTANCE_CRITERIA="$(extract_section 'Acceptance Criteria')"
+QA_SCOPE="$(extract_section 'QA Scope')"
+RISK_AREAS="$(extract_section 'Risk Areas')"
 ```
 
-Lokaler Loop = CI Loop. **Kein Re-Learning, keine zweite Mental Map.**
+Danach landen diese Felder wieder im Prompt für den Browser-Agent.
 
-→ Genau deshalb iterieren wir den Prompt lokal — und kopieren ihn am Ende rüber.
+> Das PR-Template ist damit wirklich executable.
 
 ---
 
-# Das fertige Workflow-YAML
+# Die Brücke zwischen Laptop und CI
+
+| Lokal | CI |
+|---|---|
+| `/pr` schreibt den Vertrag | Workflow liest denselben Vertrag |
+| `claude -p` gegen lokalen Dev-Server | `claude-code-action` gegen Preview-Deploy |
+| Terminal-Output lesen | Sticky Comment am PR |
+| Noch mal probieren | Retry-Step |
+| Ctrl+C nach ein paar Minuten | `timeout-minutes: 20` |
+| Im Kopf bewerten | JSON-Schema + Merge Gate |
+
+Die entscheidende Zeile:
+
+> derselbe Prompt, dasselbe Modell, dieselben Tools, nur anderer Trigger
+
+---
+
+# Contract Enforcement
+
+Was passiert, wenn der Entwickler den Vertrag schlampig ausfüllt?
+
+- Acceptance Criteria leer
+- QA Scope fehlt
+- Manual Test Scenarios sind zu vage
+
+Dann wird der Run nicht einfach "irgendwie grün".
 
 ```yaml
-name: AI QA on PR
-on:
-  pull_request:
-    types: [opened, synchronize]
-
-jobs:
-  qa:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - run: npm install -g agent-browser && agent-browser install
-
-      - id: qa
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            Open ${{ steps.deploy.outputs.preview_url }} with agent-browser.
-            Run the QA smoke test. Return JSON.
-          claude_args: |
-            --allowedTools "Bash(agent-browser*)"
-            --json-schema '{"type":"object",...}'
+contract_valid: false
+status: neutral_or_yellow
+reason: "PR contract incomplete"
 ```
 
+Der starke Punkt für QA:
+
+> Nicht erst der Code wird getestet. Schon der Testplan wird geprüft.
+
 ---
 
-# Strukturierter Output → Merge Gate
+# Der zweite Vertrag: JSON-Schema → Merge Gate
+
+Vorne rein geht ein strukturierter PR-Contract.
+Hinten raus kommt ein strukturierter QA-Contract.
 
 ```yaml
-- name: Fail the build on critical bugs
+- name: Fail on critical bugs
   if: fromJSON(steps.qa.outputs.structured_output).verdict == 'CRITICAL_BUGS'
   run: exit 1
 ```
 
-`structured_output` ist von der Action **automatisch** als Step-Output exposed — kein `jq`, kein Shell-Geklebe.
+Claude bleibt nicht-deterministisch.
+Das Schema macht den Output CI-tauglich.
 
-> Claude denkt nicht-deterministisch. Das **Schema** macht das Ergebnis CI-tauglich.
-
-→ Die Brücke zwischen "AI-Magie" und einer harten Build-Entscheidung.
-
----
-
-# Security in 30 Sekunden
-
-Bevor du das auf Fork-PRs loslässt — drei Dinge:
-
-- 🔐 **Write-Permission Check** — Drive-by-Contributor → Action refused
-- 🛡️ **PR-Head Config Sanitization** — `.claude/settings.json` aus dem PR wird **nicht** ausgeführt (sonst RCE)
-- 🧼 **Content Sanitization** — `<!-- ignore previous instructions -->` im PR-Body wird gefiltert
-
-Sanitization ist eine **Schicht**, kein Allheilmittel. Bei Fork-PRs: zweistufiger Workflow mit Human-in-the-Loop.
+- freier Text für Menschen
+- feste Felder für die Pipeline
+- klare Severity statt Bauchgefühl
 
 ---
 
-# Der komplette Loop
+# CI-Run Demo
+
+<div class="mt-10 border border-[#ff6bed] rounded-xl p-8 bg-[#ff6bed]/8">
+  <div class="text-3xl font-bold">Placeholder für dein CI-Run-Video</div>
+  <div class="mt-4 text-xl opacity-80">PR wird erstellt → Workflow startet → Sticky Comment erscheint → Verdict setzt den Status.</div>
+</div>
+
+<div class="mt-8 text-lg opacity-75">
+  Diese Slide funktioniert auch als kurzer Live-Bridge-Moment zwischen "Contract" und "Production".
+</div>
+
+---
+
+# Was du nur in Production lernst
+
+- `continue-on-error: true` plus Retry-Step, weil Agenten nicht deterministisch sind
+- `concurrency:` mit `cancel-in-progress: true`, damit neue Pushes alte Runs abbrechen
+- `timeout-minutes: 20`, damit dir kein Runaway-Agent Kosten produziert
+- `use_sticky_comment: true`, damit Re-Runs nicht den PR zuspammen
+- Action per SHA pinnen, nicht nur `@v1`, wegen Supply-Chain-Sicherheit
+
+---
+
+# In echt sind es nicht 12 Zeilen YAML
 
 ```mermaid
-flowchart LR
-    A[Spec] --> B[Code]
-    B --> C[test-browser<br/>Verifier]
-    C --> D{passt?}
-    D -->|nein| B
-    D -->|ja| E[CI Gate<br/>claude-code-action]
-    E --> F[Merge]
+flowchart TD
+    A[permissions: {}] --> B[timeout-minutes: 20]
+    B --> C[concurrency cancel-in-progress]
+    C --> D[pinned action SHA]
+    D --> E[sticky comment]
 ```
 
-Vier Stufen. Alle vom Agent gefahren. **An jeder Stelle kann ein Mensch "stop" sagen.**
+Die Slide-Version zeigt das Prinzip.
+Die Production-Version löst zusätzlich Ops-, Kosten- und Security-Probleme.
+
+---
+
+# Fork-PRs sind ein anderer Sicherheitsfall
+
+Das Problem:
+
+> Fremder Code plus deine Secrets ist keine gute Kombination.
+
+Deshalb braucht der Workflow einen Guard:
+
+```yaml
+if: github.event.pull_request.head.repo.full_name == github.repository
+```
+
+Für Forks heißt das in der Praxis:
+
+- kein blindes Ausführen mit Secrets
+- lieber zweistufig: prüfen, dann bewusst freigeben
+- Human-in-the-loop ist hier kein Bug, sondern das Sicherheitsmodell
+
+---
+
+# Die eine Idee zum Mitnehmen
+
+<div class="mt-8 text-4xl leading-tight">
+Ein Claude schreibt den <span class="text-[#ff6bed]">Testplan</span>.<br>
+Ein anderer führt ihn aus.<br>
+Das PR-Template ist der <span class="text-[#ff6bed]">Vertrag</span> zwischen beiden.
+</div>
+
+<div class="mt-10 text-xl opacity-80">
+Die Rolle von QA verschiebt sich damit nach oben:
+</div>
+
+- weniger Klickarbeit
+- mehr Contracts, Severity-Modelle und klare Acceptance Criteria
+- mehr Systemdesign für Qualität statt nur Testausführung
 
 ---
 layout: image
@@ -1246,6 +1127,56 @@ Funktioniert auf lokalen Dev-Servern **und** Live-Sites.
 
 ---
 
+# Und jetzt: Claude steuert deinen Computer
+
+<div class="flex flex-col items-center gap-3">
+  <img src="/claude-computer-use.png" class="rounded-lg max-h-96" />
+  <div class="opacity-70 text-sm">Claude Code kann jetzt auch deinen Computer benutzen — hier editiert er live in iMovie.</div>
+</div>
+
+---
+
+# The Bitter Lesson
+
+<div class="text-sm opacity-60 mb-4">Rich Sutton, März 2019</div>
+
+> "The biggest lesson that can be read from 70 years of AI research is that **general methods that leverage computation** are ultimately the most effective, and by a large margin."
+
+<div class="mt-6 text-lg opacity-85">
+Chess, Go, Speech Recognition, Vision — überall dasselbe Muster:<br>
+Menschen bauen ihr Domänenwissen ein. Es hilft kurzfristig. Dann kommt Skalierung und überholt alles.
+</div>
+
+<div class="mt-6 text-xl">
+Die zwei Dinge, die mit Compute skalieren: <span class="text-[#ff6bed]">Search</span> und <span class="text-[#ff6bed]">Learning</span>.
+</div>
+
+---
+
+# Was heißt das für QA?
+
+<div class="text-2xl leading-relaxed">
+Der Reflex ist: "Ich schreibe dem Agent genau rein, <span class="opacity-60">wie</span> er testen soll."
+</div>
+
+<div class="mt-6 text-2xl leading-relaxed">
+Die bittere Lektion sagt: Bau lieber den <span class="text-[#ff6bed]">Loop</span>, in dem der Agent selbst suchen und lernen kann.
+</div>
+
+<div class="mt-10 opacity-80">
+
+- **Nicht** hart verdrahtete Click-Pfade → **sondern** ein Agent mit Browser-Tools und klarem Ziel
+- **Nicht** eine perfekte Prompt-Bibel → **sondern** ein PR-Contract, an dem sich der Agent selbst misst
+- **Nicht** QA-Wissen als Skript → **sondern** QA-Wissen als Acceptance Criteria, die skalieren
+
+</div>
+
+<div class="mt-8 text-lg opacity-70">
+"We want AI agents that can discover like we can, not which contain what we have discovered."
+</div>
+
+---
+
 # Take-Away
 
 > **AI macht QA nicht überflüssig — sie verschiebt QA von *Tippen* zu *Denken*.**
@@ -1258,7 +1189,7 @@ Funktioniert auf lokalen Dev-Servern **und** Live-Sites.
 
 ---
 
-layout: center
+layout: end
 ---
 
 # Danke!
