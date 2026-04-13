@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter starter build -- --base /",
+  "outputDirectory": "starter/dist",
+  "installCommand": "pnpm install"
+}
