@@ -2,6 +2,7 @@
 
 A complete, reusable Slidev setup with custom theme, addon utilities, and starter template.
 
+
 ## 📦 What's Inside
 
 | Package                          | Description                                    |
