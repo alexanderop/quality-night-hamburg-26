@@ -10,7 +10,7 @@ drawings:
 info: |
   ## Einen KI-QA-Engineer bauen mit Claude Code & Playwright
 
-  Von Alexander Opalic — Quality Night Hamburg 2026
+  Von Alexander Opalic, Quality Night Hamburg 2026
 hideFooter: true
 layout: image
 image: /quality-night-hamburg-2026.jpeg
@@ -90,7 +90,7 @@ Du schreibst eine Spec. Der Agent baut. Du reviewst.
 >
 > — Boris Cherny, Creator of Claude Code
 
-**Stripe Minions:** über **1.300 PRs pro Woche** — agent-geschrieben, human-reviewed.
+**Stripe Minions:** über **1.300 PRs pro Woche**. Agent-geschrieben, human-reviewed.
 
 ---
 layout: image
@@ -136,7 +136,7 @@ layout: statement
 
 # Heute: <span class="text-[#ff6bed]">QA</span>
 
-<div class="mt-6 text-2xl opacity-80">Wenn AI den Code schreibt,<br/>muss QA mitwachsen — sonst landen Bugs in Production.</div>
+<div class="mt-6 text-2xl opacity-80">Wenn AI den Code schreibt,<br/>muss QA mitwachsen. Sonst landen Bugs in Production.</div>
 
 ---
 layout: image-right
@@ -145,16 +145,16 @@ image: /manning-book.png
 
 # Buch-Empfehlung
 
-**Software Testing with Generative AI** — Mark Winteringham
+**Software Testing with Generative AI**, von Mark Winteringham.
 
 Use-Cases aus dem Buch:
 
-- 🧪 **Test-Daten generieren** — realistische Fixtures, auch via SQL-Seeds
+- 🧪 **Test-Daten generieren**: realistische Fixtures, auch via SQL-Seeds
 - ✍️ **Tests & Boilerplate schreiben** lassen (Unit, Integration, E2E)
 - 📄 **Page Objects aus HTML** generieren
 - 🧭 **Test-Pläne aus Tickets** ableiten (RAG + Fine-Tuning)
 
-<div class="text-xs opacity-60 mt-2">Mein Fazit: ⭐⭐⭐⭐ — top Einstieg, besonders Shift-Left-Testing & Prompt für Test-Daten-Generierung</div>
+<div class="text-xs opacity-60 mt-2">Mein Fazit: ⭐⭐⭐⭐. Top Einstieg, besonders Shift-Left-Testing und der Prompt für Test-Daten-Generierung.</div>
 <div class="text-xs opacity-60 mt-1">manning.com/books/software-testing-with-generative-ai</div>
 
 ---
@@ -173,7 +173,7 @@ layout: statement
 # Ich bin <span class="text-[#ff6bed]">Entwickler</span>, kein QA-Engineer
 
 <div class="mt-6 text-xl opacity-80">Alles, was jetzt kommt, sind <b>Ideen</b> aus Entwickler-Sicht.</div>
-<div class="mt-4 text-xl opacity-80">Ich bin nachher gespannt auf den Austausch —<br/>wie ihr als <span class="text-[#ff6bed]">echte QA-Engineers</span> das seht.</div>
+<div class="mt-4 text-xl opacity-80">Ich bin nachher gespannt auf den Austausch.<br/>Wie seht ihr das als <span class="text-[#ff6bed]">echte QA-Engineers</span>?</div>
 
 ---
 
@@ -186,7 +186,7 @@ layout: center
 <div class="agenda w-full max-w-2xl mx-auto text-left">
   <div v-for="(item, i) in [
     { title: 'Warum QA jetzt', sub: 'Code ist schnell, QA wird zum Bottleneck' },
-    { title: 'Agents 101', sub: 'LLM, Tools, Loop — und Claude Code' },
+    { title: 'Agents 101', sub: 'LLM, Tools, Loop und Claude Code' },
     { title: 'Die Idee', sub: 'Ein QA-Agent, der PRs prüft' },
     { title: 'Browser-Tools', sub: 'MCP vs CLI, Agent Browser, Snapshot-and-ref' },
     { title: 'Vom Laptop in die CI', sub: 'claude -p, Skills, GitHub Actions' },
@@ -252,7 +252,7 @@ layout: center
   <RoughLine :x1="40" :y1="200" :x2="660" :y2="200" />
 </RoughSvg>
 
-Das LLM würfelt nicht  es **gewichtet**. Jedes nächste Token ist eine Wahrscheinlichkeitsverteilung. Klingt nach "stochastischem Papagei" — viele sehen es genau so.
+Das LLM würfelt nicht, es **gewichtet**. Jedes nächste Token ist eine Wahrscheinlichkeitsverteilung. Klingt nach "stochastischem Papagei", und viele sehen es genau so.
 
 ---
 layout: image-right
@@ -261,14 +261,14 @@ image: /wolfram-chatgpt.png
 
 # Lese-Empfehlung
 
-**Stephen Wolfram** — *What Is ChatGPT Doing … and Why Does It Work?*
+**Stephen Wolfram**, *What Is ChatGPT Doing … and Why Does It Work?*
 
-Der beste Einstieg, wenn du wirklich verstehen willst, was unter der Haube passiert — von Wahrscheinlichkeiten über Embeddings bis zu Transformern.
+Der beste Einstieg, wenn du verstehen willst, was unter der Haube passiert. Von Wahrscheinlichkeiten über Embeddings bis zu Transformern.
 
 - 📖 Als Buch bei Wolfram Media
 - 🔗 Kostenlos als Blog-Post: <span class="text-[#ff6bed]">writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work</span>
 
-<div class="text-xs opacity-60 mt-4">Mein Fazit: ⭐⭐⭐⭐⭐ — nach dem Lesen fühlt sich LLM nicht mehr wie Magie an.</div>
+<div class="text-xs opacity-60 mt-4">Mein Fazit: ⭐⭐⭐⭐⭐. Nach dem Lesen fühlt sich LLM nicht mehr wie Magie an.</div>
 
 ---
 
@@ -310,7 +310,7 @@ Wer von euch hat schon mal benutzt…
 
 # Claude Code
 
-Anthropic, Research Preview im **Februar 2025** — CLI-basierter Coding-Agent, heute der Standard für agentic Coding.
+Anthropic, Research Preview im **Februar 2025**. CLI-basierter Coding-Agent, heute der Standard für agentic Coding.
 
 > "Claude Code is, with hindsight, poorly named. It's not purely a coding tool: it's a tool for **general computer automation**. It's best described as a **general agent**."
 >
@@ -318,7 +318,7 @@ Anthropic, Research Preview im **Februar 2025** — CLI-basierter Coding-Agent, 
 
 **Default-Tools:** `Read`, `Write` / `Edit`, `Grep` / `Glob`, `Bash`
 
-Allgemeiner Agent mit Tools — perfekt, um QA-Aufgaben zu automatisieren.
+Allgemeiner Agent mit Tools. Perfekt, um QA-Aufgaben zu automatisieren.
 
 ---
 
@@ -359,10 +359,10 @@ claude           # startet den Agent im aktuellen Ordner – Login per Browser b
 
 **Was du brauchst:**
 
-- Einen **Anthropic-Account** – Claude Pro ab ~20 €/Monat deckt die meisten Use-Cases ab (Max ab ~100 $/Monat, oder API-Key Pay-as-you-go)
+- Einen **Anthropic-Account**. Claude Pro ab ~20 €/Monat deckt die meisten Use-Cases ab (Max ab ~100 $/Monat, oder API-Key Pay-as-you-go)
 - Ein Terminal deiner Wahl
 
-→ Nach 2 Minuten läuft der Agent auf deinem Rechner. Montag einfach ausprobieren.
+→ Nach 2 Minuten läuft der Agent auf deinem Rechner. Montag ausprobieren.
 
 ---
 
@@ -424,7 +424,7 @@ backgroundSize: contain
 
 # Was Claude Code fehlt
 
-Claude Code kann lesen, schreiben, suchen, Bash ausführen — aber es kann **keinen Browser bedienen**.
+Claude Code kann lesen, schreiben, suchen, Bash ausführen. Aber es kann **keinen Browser bedienen**.
 
 Genau das müssen wir ihm geben.
 
@@ -437,17 +437,17 @@ Genau das müssen wir ihm geben.
 Zwei Wege, dem Agent neue Fähigkeiten zu geben:
 
 - 🔌 **MCP** (Model Context Protocol)
-- 💻 **CLI** — ein ganz normales Terminal-Tool
+- 💻 **CLI**: ein ganz normales Terminal-Tool
 
 Schauen wir uns erst an, was MCP eigentlich ist.
 
 ---
 
-# Was ist MCP?
+# MCP: der Agent redet mit externen Tool-Servern
 
 <div class="text-sm opacity-90">
 
-**Model Context Protocol** — Anthropic-Standard, damit Agents mit externen Tool-Servern reden. Server stellt Tools bereit, Agent ruft per JSON-RPC auf — **jede Antwort fließt direkt in den LLM-Kontext**.
+**Model Context Protocol**, Anthropic-Standard für Agents, die mit externen Tool-Servern reden. Server stellt Tools bereit, Agent ruft per JSON-RPC auf. **Jede Antwort fließt direkt in den LLM-Kontext.**
 
 </div>
 
@@ -459,7 +459,7 @@ Schauen wir uns erst an, was MCP eigentlich ist.
 
 # Und CLI?
 
-Kein Server. Kein Protokoll. Einfach ein Kommandozeilen-Tool, das der Agent über sein Bash-Tool aufruft.
+Kein Server. Kein Protokoll. Ein Kommandozeilen-Tool, das der Agent über sein Bash-Tool aufruft.
 
 ```bash
 agent-browser snapshot -i > snapshot.yml
@@ -476,16 +476,16 @@ agent-browser screenshot -o shot.png
 
 **MCP pusht Daten in den Context. CLI lässt den Agent pullen.**
 
-MCP pipet bei jedem Tool-Call alles zurück: Snapshot, Screenshot, DOM — auch wenn der Agent es gar nicht braucht.
+MCP pipet bei jedem Tool-Call alles zurück: Snapshot, Screenshot, DOM. Auch wenn der Agent es gar nicht braucht.
 
 | | MCP | CLI |
 |---|---|---|
 | Token-Verbrauch (gleiche Demo) | 114 K | **26.8 K** |
 | Faktor | 1× | **~4× weniger** |
 
-Coding-Agents wie Claude Code haben eh Filesystem + Bash → der MCP-Layer ist für Browser-Tools schlicht redundant.
+Coding-Agents wie Claude Code haben eh Filesystem + Bash → der MCP-Layer ist für Browser-Tools redundant.
 
-<div class="text-xs opacity-60 mt-4">Quelle: Playwright CLI vs MCP — A New Tool for Your Coding Agent</div>
+<div class="text-xs opacity-60 mt-4">Quelle: "Playwright CLI vs MCP: A New Tool for Your Coding Agent"</div>
 
 ---
 
@@ -551,7 +551,7 @@ Stattdessen: **Agent Browser** (vercel-labs)
 - Kein Node.js, kein Playwright-Runtime nötig
 - Nutzt Chrome for Testing unter der Haube
 - Pro Workspace eigener Browser (`.agent-browser/`)
-- **Snapshot-and-ref Modell** — perfekt für Agents
+- **Snapshot-and-ref Modell**: perfekt für Agents
 
 ---
 
@@ -583,7 +583,7 @@ agent-browser screenshot
 
 <v-click>
 
-`snapshot -i` gibt einen Accessibility-Tree zurück, in dem **jedes Element eine ref wie `@e1` bekommt**. Keine harten Selektoren. Layout ändert sich? Egal — Claude liest den neuen Snapshot und arbeitet mit den neuen refs.
+`snapshot -i` gibt einen Accessibility-Tree zurück, in dem **jedes Element eine ref wie `@e1` bekommt**. Keine harten Selektoren. Layout ändert sich? Egal, Claude liest den neuen Snapshot und arbeitet mit den neuen refs.
 
 </v-click>
 
@@ -630,13 +630,13 @@ Solange ich ihn **manuell** starte, ist er ein Spielzeug.
 
 <v-click>
 
-Erst wenn ihn **etwas anderes** startet — ein Script, ein Hook, ein PR — wird er ein Agent.
+Erst wenn ihn **etwas anderes** startet (ein Script, ein Hook, ein PR), wird er ein Agent.
 
 </v-click>
 
 ---
 
-# `claude -p` — der One-Shot Modus
+# `claude -p`: der One-Shot Modus
 
 Derselbe Claude Code, aber **ohne REPL**:
 
@@ -698,7 +698,7 @@ Report: PASS/FAIL pro Test + gefundene Bugs" \
   --allowedTools "Bash(agent-browser*)"
 ```
 
-Ein Befehl. Claude öffnet den Browser, klickt sich durch, schaut in die Console — und liefert einen Bericht.
+Ein Befehl. Claude öffnet den Browser, klickt sich durch, schaut in die Console, und liefert einen Bericht.
 
 ---
 
@@ -706,9 +706,9 @@ Ein Befehl. Claude öffnet den Browser, klickt sich durch, schaut in die Console
 
 | # | Test | Result |
 |---|------|--------|
-| 1 | **Homepage laden** | **PASS** — Onboarding-Overlay erscheint, nach "Skip" zeigt die Homepage Kalender, "Start New Workout", "Log Past Workout", "Quick Timer" und "Recent Workouts" korrekt an. |
-| 2 | **Navigation (2 Links)** | **PASS** — "Workouts" navigiert zur Workouts-Seite (Templates/Benchmarks/Progressions Tabs mit 4 Templates sichtbar). "Exercises" navigiert zur Exercise-Library (173 Exercises mit Filtern nach Muskelgruppe und Equipment). |
-| 3 | **JS-Errors (Console)** | **PASS** — Keine JavaScript-Fehler oder unhandled Promise-Rejections gefunden. |
+| 1 | **Homepage laden** | **PASS**. Onboarding-Overlay erscheint, nach "Skip" zeigt die Homepage Kalender, "Start New Workout", "Log Past Workout", "Quick Timer" und "Recent Workouts" korrekt an. |
+| 2 | **Navigation (2 Links)** | **PASS**. "Workouts" navigiert zur Workouts-Seite (Templates/Benchmarks/Progressions Tabs mit 4 Templates sichtbar). "Exercises" navigiert zur Exercise-Library (173 Exercises mit Filtern nach Muskelgruppe und Equipment). |
+| 3 | **JS-Errors (Console)** | **PASS**. Keine JavaScript-Fehler oder unhandled Promise-Rejections gefunden. |
 
 **Gefundene Bugs:** Keine. Die App lädt sauber, Navigation funktioniert, keine Console-Errors.
 
@@ -738,7 +738,7 @@ claude -p "Teste workout-tracker als Senior QA-Engineer mit agent-browser.
 JOURNEYS:
 1. Workout loggen (Happy Path): Start → Exercise → Set eintragen
    → speichern → verifiziere in 'Recent Workouts'
-2. Negative Test: leere Felder speichern — gibt es Validation?
+2. Negative Test: leere Felder speichern. Gibt es Validation?
 3. Exercise Library: Muskelgruppe filtern → reduziert sich die Anzahl?
 4. Reload-Resilienz: State nach Reload noch da?
 5. Console-Errors mitloggen.
@@ -757,8 +757,8 @@ Severity (CRITICAL/MAJOR/MINOR/NONE), Repro falls Bug." \
 
 | # | Finding | Severity |
 |---|---------|----------|
-| 1 | Set-Counter zählt leere Default-Sets — zeigt "3 Sets" statt "1" | 🟡 MINOR |
-| 2 | Alle Workouts heißen default "Evening Workout" — Recent-Liste unbrauchbar | 🟡 MINOR |
+| 1 | Set-Counter zählt leere Default-Sets, zeigt "3 Sets" statt "1" | 🟡 MINOR |
+| 2 | Alle Workouts heißen default "Evening Workout", Recent-Liste unbrauchbar | 🟡 MINOR |
 | 3 | Orphan `/workout/active` State beim Initial-Load | 🟡 MINOR |
 | 4 | Validation blockt leere Sets korrekt | ✅ |
 | 5 | Filter reduziert 173 → 21 (Chest) korrekt | ✅ |
@@ -767,24 +767,24 @@ Severity (CRITICAL/MAJOR/MINOR/NONE), Repro falls Bug." \
 
 **Repro Finding #1:** Start Workout → 1 Exercise → nur Set 1 befüllen + complete → End Workout → Recent zeigt "3 Sets" statt "1 Set".
 
-→ Derselbe Agent. Derselbe Browser. **Anderer Prompt — andere Bugs.**
+→ Derselbe Agent. Derselbe Browser. **Anderer Prompt, andere Bugs.**
 
 ---
 
 # Bonus: `claude -p` ist mehr als QA
 
-Browser-Testing ist nur **ein** Use-Case. Beispiel — ein Shopping-Agent auf otto.de:
+Browser-Testing ist nur **ein** Use-Case. Beispiel: ein Shopping-Agent auf otto.de.
 
 ```bash
 claude -p "Öffne https://www.otto.de mit agent-browser cli.
 Suche nach 'Laufschuhe Herren Größe 44'.
 Filtere nach Preis unter 80€ und Bewertung 4+ Sterne.
 Lege den günstigsten Treffer in den Warenkorb.
-Gehe bis zur Kasse — schließe NICHT ab." \
+Gehe bis zur Kasse, schließe NICHT ab." \
   --allowedTools "Bash(agent-browser*)"
 ```
 
-Derselbe Loop — andere Aufgabe. Auch nutzbar für Data Processing, File Organization, API Calls, Shell Aliases. Dieselben Flags gibt's im **Claude Agent SDK** (TS/Python).
+Derselbe Loop, andere Aufgabe. Auch nutzbar für Data Processing, File Organization, API Calls, Shell Aliases. Dieselben Flags gibt's im **Claude Agent SDK** (TS/Python).
 
 💡 Wir bleiben heute beim QA-Use-Case.
 
@@ -802,9 +802,9 @@ backgroundSize: contain
 
 ---
 
-# Was ist ein System Prompt?
+# System Prompt: die Identität vor dem ersten User-Input
 
-Ein **System Prompt** ist die *Identität* des Modells für diesen Run — bevor irgendein User-Input kommt. Persona, Regeln, Domänenwissen, Tools.
+Der **System Prompt** legt fest, wer das Modell in diesem Run ist, bevor irgendein User-Input kommt. Persona, Regeln, Domänenwissen, Tools.
 
 `--append-system-prompt` hängt ihn an Claudes Default an, ohne ihn zu ersetzen.
 
@@ -823,7 +823,7 @@ finding bugs before users do.
 ...
 ```
 
-→ Der Agent ist **kein generisches Claude** mehr — er ist Quinn, mit Meinung, Verdict-Rubrik, und Bug-Severity-Guide.
+→ Der Agent ist **kein generisches Claude** mehr. Er ist Quinn, mit Meinung, Verdict-Rubrik und Bug-Severity-Guide.
 
 ---
 
@@ -833,15 +833,15 @@ finding bugs before users do.
 
 ---
 
-# Was ist ein Skill? (Progressive Disclosure)
+# Skills: Progressive Disclosure
 
-Ein **Skill** ist ein Ordner mit `SKILL.md` — Claude lädt ihn in drei Stufen:
+Ein **Skill** ist ein Ordner mit `SKILL.md`. Claude lädt ihn in drei Stufen.
 
 <SkillLoadDiagram />
 
-- **Startup** — Nur `name` + `description` aller Skills im System-Prompt (~8k Char-Budget, 1% Context-Window). Claude weiß *dass* es den Skill gibt.
-- **Invoke** — User tippt `/skill-name` oder Claude matcht die Description. Kompletter Markdown-Body wird als *eine Message* injiziert — bleibt bis Session-Ende.
-- **Execute** — Script-Code landet **nie** im Kontext, nur das Output. Referenzierte `.md`-Files werden nur bei Bedarf geladen.
+- **Startup**: Nur `name` + `description` aller Skills im System-Prompt (~8k Char-Budget, 1% Context-Window). Claude weiß *dass* es den Skill gibt.
+- **Invoke**: User tippt `/skill-name` oder Claude matcht die Description. Kompletter Markdown-Body wird als *eine Message* injiziert und bleibt bis Session-Ende.
+- **Execute**: Script-Code landet **nie** im Kontext, nur das Output. Referenzierte `.md`-Files werden nur bei Bedarf geladen.
 
 → Hunderte Skills installierbar ohne Context-Explosion. Quelle: [code.claude.com/docs/en/skills](https://code.claude.com/docs/en/skills)
 
@@ -849,7 +849,7 @@ Ein **Skill** ist ein Ordner mit `SKILL.md` — Claude lädt ihn in drei Stufen:
 
 # Skill: test-browser
 
-Ein Skill, den der Implementation Agent **selbst aufrufen** kann — um zu prüfen: *"Hab ich das Feature wirklich gebaut?"*
+Ein Skill, den der Implementation Agent **selbst aufrufen** kann, um zu prüfen: *"Hab ich das Feature wirklich gebaut?"*
 
 ```
 1. git diff --name-only main...HEAD
@@ -868,7 +868,7 @@ Kein statischer E2E-Test. Der Agent liest die Diff, **entscheidet selbst**, welc
 
 Zwei Wege, den Verifier anzustoßen:
 
-**🧑‍💻 Manuell — lokal:**
+**🧑‍💻 Manuell, lokal:**
 
 ```bash
 claude -p "Run the test-browser skill on the current branch"
@@ -876,9 +876,9 @@ claude -p "Run the test-browser skill on the current branch"
 
 Du triggers, der Agent testet, du siehst das Ergebnis im Terminal.
 
-**☁️ Automatisch — in der Cloud:**
+**☁️ Automatisch, in der Cloud:**
 
-Claude Code Web, Cursor Background Agent, Copilot Coding Agent bauen das Feature in einer Sandbox. Dort ruft der Agent `test-browser` **selbst** auf — gegen einen Preview-Deploy. Du bekommst einen fertigen PR mit grünem Verifier-Report.
+Claude Code Web, Cursor Background Agent, Copilot Coding Agent bauen das Feature in einer Sandbox. Dort ruft der Agent `test-browser` **selbst** auf, gegen einen Preview-Deploy. Du bekommst einen fertigen PR mit grünem Verifier-Report.
 
 → Der QA-Loop läuft **ohne dich**.
 
@@ -887,7 +887,7 @@ Claude Code Web, Cursor Background Agent, Copilot Coding Agent bauen das Feature
 
 # Das Endspiel
 
-Ein **Agent**, der bei jedem Pull Request via **GitHub Actions** automatisch prüft, ob die Acceptance Criteria erfüllt sind — und darüber hinaus weitere Qualitätschecks durchführt.
+Ein **Agent**, der bei jedem Pull Request via **GitHub Actions** automatisch prüft, ob die Acceptance Criteria erfüllt sind, plus weitere Qualitätschecks.
 
 <RoughSvg :width="920" :height="240" :padding="16" :roughness="1.4" :seed="13">
   <RoughRect :x="0"   :y="60" :width="220" :height="120" variant="muted"   fill-style="hachure" />
@@ -909,7 +909,7 @@ Ein **Agent**, der bei jedem Pull Request via **GitHub Actions** automatisch pr�
   <RoughArrow :x1="220" :y1="120" :x2="350" :y2="120" />
   <RoughArrow :x1="570" :y1="120" :x2="700" :y2="120" />
 
-  <RoughText :x="460" :y="225" variant="subtitle">Kein manuelles Klicken mehr — der Agent testet selbstständig.</RoughText>
+  <RoughText :x="460" :y="225" variant="subtitle">Kein manuelles Klicken mehr. Der Agent testet selbstständig.</RoughText>
 </RoughSvg>
 
 ---
@@ -939,7 +939,7 @@ Was der Vertrag leistet:
 - Leere oder schwammige PRs fallen sofort auf
 - Das Template wird von "Pflichtfeld" zu "ausführbarer Spezifikation"
 
-> Der zweite Claude in CI liest genau diese Sections wieder aus — das Template ist damit **executable**.
+> Der zweite Claude in CI liest genau diese Sections wieder aus. Das Template ist damit **executable**.
 
 ---
 
@@ -963,7 +963,7 @@ Das Schema macht den Output CI-tauglich.
 
 ---
 
-# Was kostet das eigentlich?
+# Was kostet das?
 
 Community-Benchmarks mit Sonnet, Stand heute:
 
@@ -980,10 +980,10 @@ Community-Benchmarks mit Sonnet, Stand heute:
 Die Hebel, die wirklich wirken:
 
 - `--max-turns 5` statt unlimited
-- `cancel-in-progress: true` — neue Commits killen alte Runs
-- `--model claude-sonnet-4-6` — ~60% günstiger als Opus, reicht für Routine-QA
-- `paths-ignore: ['*.md', 'docs/**']` — Doku-Only-PRs überspringen
-- `timeout-minutes: 20` — Notbremse
+- `cancel-in-progress: true`: neue Commits killen alte Runs
+- `--model claude-sonnet-4-6`: ~60% günstiger als Opus, reicht für Routine-QA
+- `paths-ignore: ['*.md', 'docs/**']`: Doku-Only-PRs überspringen
+- `timeout-minutes: 20`: Notbremse
 
 </div>
 
@@ -1024,7 +1024,7 @@ Die Rolle von QA verschiebt sich damit nach oben:
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https%3A%2F%2Falexop.dev%2Fposts%2Fbuilding_ai_qa_engineer_claude_code_playwright%2F" class="w-64 h-64 bg-white p-3 rounded" />
 
 <div class="mt-4 text-sm opacity-70 text-center">
-alexop.dev — Building an AI QA Engineer<br>with Claude Code & Playwright MCP
+alexop.dev: Building an AI QA Engineer<br>with Claude Code & Playwright MCP
 </div>
 
 </div>
@@ -1056,18 +1056,18 @@ layout: statement
 
 <div>
 
-Exploratives Testing der Suche auf otto.de — Mobile.
+Exploratives Testing der Suche auf otto.de, Mobile.
 
 <v-clicks>
 
-- 🐌 **Manuell teuer** — Klickarbeit, schwer reproduzierbar, kein Audit-Trail
+- 🐌 **Manuell teuer**: Klickarbeit, schwer reproduzierbar, kein Audit-Trail
 - 🔒 **Hart verdrahtete E2E-Tests** brechen bei jeder UI-Änderung
 - 🤖 **Welcher Agent ist der beste für QA?** Claude, Codex, Copilot?
 - 🧰 **Welches Browser-Tool?** agent-browser oder playwright-cli?
 
 </v-clicks>
 
-<div class="mt-10 opacity-80">Ich will <b>vergleichen</b> können — gleicher Test, andere Agents.</div>
+<div class="mt-10 opacity-80">Ich will <b>vergleichen</b> können: gleicher Test, andere Agents.</div>
 
 </div>
 
@@ -1093,7 +1093,7 @@ flowchart LR
 
 </div>
 
-Agent und Browser sind **austauschbar**. Derselbe Charter läuft auf jeder Kombi — A/B-Vergleich frei Haus.
+Agent und Browser sind **austauschbar**. Derselbe Charter läuft auf jeder Kombi. A/B-Vergleich frei Haus.
 
 ---
 
@@ -1188,7 +1188,7 @@ qa-runs/playwright-cli/2026-04-14_10-32-11/
 └── duration.txt           ← Charter, Agent, Browser, Dauer
 ```
 
-Pro Run ein Ordner, sortiert nach Browser-Backend — damit du `agent-browser` und `playwright-cli` <span class="text-[#ff6bed]">parallel laufen</span> und vergleichen kannst.
+Pro Run ein Ordner, sortiert nach Browser-Backend. So kannst du `agent-browser` und `playwright-cli` <span class="text-[#ff6bed]">parallel laufen</span> lassen und vergleichen.
 
 ---
 
@@ -1196,9 +1196,9 @@ Pro Run ein Ordner, sortiert nach Browser-Backend — damit du `agent-browser` u
 
 <v-clicks>
 
-- Claude liefert schöne Reports — aber ist er auch gründlicher?
-- Codex ist schneller — findet er auch die echten Bugs?
-- Copilot CLI ist neu — kann der überhaupt mithalten?
+- Claude liefert schöne Reports. Aber ist er auch gründlicher?
+- Codex ist schneller. Findet er auch die echten Bugs?
+- Copilot CLI ist neu. Kann der mithalten?
 
 </v-clicks>
 
@@ -1238,10 +1238,10 @@ layout: statement
 
 <v-clicks>
 
-1. **Anpfiff** — drei Background-Tasks parallel: claude, codex, copilot
-2. **Live-Kommentar** — Skill pollt die Session-Logs alle 60s und kommentiert wie ein Fußball-Reporter
-3. **Abpfiff** — wenn alle drei fertig sind: Vergleichs-Report
-4. **Bewertung** — Speed, Findings, Disziplin, Report-Qualität
+1. **Anpfiff**: drei Background-Tasks parallel, claude, codex, copilot
+2. **Live-Kommentar**: Skill pollt die Session-Logs alle 60s und kommentiert wie ein Fußball-Reporter
+3. **Abpfiff**: wenn alle drei fertig sind, Vergleichs-Report
+4. **Bewertung**: Speed, Findings, Disziplin, Report-Qualität
 
 </v-clicks>
 
@@ -1257,7 +1257,7 @@ Aus drei separaten <code>bun qa.ts</code>-Aufrufen wird <b>ein</b> Befehl mit Li
 
 # Ein echter Battle
 
-Charter: **`category-nav-mobile`** — Damen → Schuhe → Sneaker, Drill-Down, Breadcrumbs, Sticky-Verhalten.
+Charter: **`category-nav-mobile`**. Damen → Schuhe → Sneaker, Drill-Down, Breadcrumbs, Sticky-Verhalten.
 
 <div class="grid grid-cols-3 gap-4 mt-8 text-sm">
   <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
@@ -1266,7 +1266,7 @@ Charter: **`category-nav-mobile`** — Damen → Schuhe → Sneaker, Drill-Down,
     <div class="opacity-80">⏱ 6:20</div>
     <div class="opacity-80">🟥 <b>error</b></div>
     <div class="opacity-80">0 Findings</div>
-    <div class="mt-2 text-xs opacity-70">Session abgebrochen — Run nicht zu Ende gefahren.</div>
+    <div class="mt-2 text-xs opacity-70">Session abgebrochen. Run nicht zu Ende gefahren.</div>
   </div>
   <div class="border border-[#ff6bed] rounded px-4 py-4 bg-[#ff6bed]/10">
     <div class="text-xs uppercase tracking-wider opacity-60 mb-1">gpt-5.4</div>
@@ -1282,7 +1282,7 @@ Charter: **`category-nav-mobile`** — Damen → Schuhe → Sneaker, Drill-Down,
     <div class="opacity-80">⏱ 12:31</div>
     <div class="opacity-80">🟢 <b>pass</b></div>
     <div class="opacity-80">0 Findings</div>
-    <div class="mt-2 text-xs opacity-70">Alles grün — aber den Overlay-Bug übersehen.</div>
+    <div class="mt-2 text-xs opacity-70">Alles grün. Aber den Overlay-Bug übersehen.</div>
   </div>
 </div>
 
@@ -1314,7 +1314,7 @@ Gleicher Charter, gleicher Browser. <span class="text-[#ff6bed]">Drei unterschie
 </div>
 
 <div class="mt-6 opacity-80">
-Codex ist den Charter Schritt für Schritt durchgegangen — Drill-Down, Landing, Menü öffnen. Dann fällt ihm auf: der <b>rote Filter-CTA</b> bleibt über dem offenen Menü sichtbar. Er tippt drauf — und es öffnet sich ein zweiter Drawer <b>über</b> dem Burger-Menü.
+Codex ist den Charter Schritt für Schritt durchgegangen: Drill-Down, Landing, Menü öffnen. Dann fällt ihm auf: der <b>rote Filter-CTA</b> bleibt über dem offenen Menü sichtbar. Er tippt drauf, und es öffnet sich ein zweiter Drawer <b>über</b> dem Burger-Menü.
 </div>
 
 ---
@@ -1341,14 +1341,14 @@ Codex ist den Charter Schritt für Schritt durchgegangen — Drill-Down, Landing
 ```
 
 <div class="mt-4 opacity-80 text-sm">
-Severity, Repro-Schritte, Erwartung vs. Ist, Evidenz-Screenshot, Hypothese — <span class="text-[#ff6bed]">alles automatisch generiert</span>. Ready für Jira.
+Severity, Repro-Schritte, Erwartung vs. Ist, Evidenz-Screenshot, Hypothese. <span class="text-[#ff6bed]">Alles automatisch generiert</span>. Ready für Jira.
 </div>
 
 ---
 
 # Und warum ist Claude abgebrochen?
 
-Statt Logs zu durchforsten — frag <span class="text-[#ff6bed]">Claude Code</span> direkt im Run-Ordner.
+Statt Logs zu durchforsten: frag <span class="text-[#ff6bed]">Claude Code</span> direkt im Run-Ordner.
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -1360,7 +1360,7 @@ Statt Logs zu durchforsten — frag <span class="text-[#ff6bed]">Claude Code</sp
 ```
 
 <div class="mt-4 text-sm opacity-80">
-Claude Code liest <code>error_max_turns.json</code>, sieht <b>"Reached max turns (60)"</b> — nach 6:17 hing er beim Scrollen.
+Claude Code liest <code>error_max_turns.json</code>, sieht <b>"Reached max turns (60)"</b>. Nach 6:17 hing er beim Scrollen.
 </div>
 
 <div class="mt-2 text-sm">
@@ -1378,7 +1378,7 @@ Claude Code liest <code>error_max_turns.json</code>, sieht <b>"Reached max turns
 </div>
 
 <div class="mt-4 opacity-70 text-sm">
-Die Run-Artefakte sind alle Markdown + JSON — jeder Coding-Agent kann sie lesen und erklären.
+Die Run-Artefakte sind alle Markdown + JSON. Jeder Coding-Agent kann sie lesen und erklären.
 </div>
 
 ---
@@ -1387,10 +1387,10 @@ Die Run-Artefakte sind alle Markdown + JSON — jeder Coding-Agent kann sie lese
 
 <v-clicks>
 
-- **Codex** war der einzige, der den echten Overlay-Bug gefunden hat — und das <b>schneller</b> als Copilot
-- **Copilot** war gründlich, aber zu nachsichtig — 🟢 pass, obwohl der Bug da war
-- **Claude** ist einfach <b>abgebrochen</b> — das willst du wissen, bevor du ihn für CI einplanst
-- Modell-Name ≠ Agent-Qualität — Codex und Copilot nutzen beide `gpt-5.4`, Ergebnisse sind trotzdem komplett verschieden
+- **Codex** war der einzige, der den echten Overlay-Bug gefunden hat, und das <b>schneller</b> als Copilot
+- **Copilot** war gründlich, aber zu nachsichtig. 🟢 pass, obwohl der Bug da war
+- **Claude** ist <b>abgebrochen</b>. Das willst du wissen, bevor du ihn für CI einplanst
+- Modell-Name ≠ Agent-Qualität. Codex und Copilot nutzen beide `gpt-5.4`, Ergebnisse sind trotzdem komplett verschieden
 
 </v-clicks>
 
@@ -1404,9 +1404,9 @@ Ohne Battle hättest du <span class="text-[#ff6bed]">einen</span> Agent gewählt
 
 <v-clicks>
 
-- Agents werden **wöchentlich** besser — Snapshot von heute ist morgen veraltet
-- Modelle sind **nicht gleich gut** in allen Domains — QA ist anders als Coding
-- Du kannst nicht für jedes Charter raten — du musst **messen**
+- Agents werden **wöchentlich** besser. Snapshot von heute ist morgen veraltet
+- Modelle sind **nicht gleich gut** in allen Domains. QA ist anders als Coding
+- Du kannst nicht für jedes Charter raten. Du musst **messen**
 
 </v-clicks>
 
@@ -1422,20 +1422,20 @@ Eine Markdown-Wissensbasis, die über Runs hinweg wächst.
 
 <v-clicks>
 
-- **Beim Run** — `brain/index.md` landet im System-Prompt, der Agent folgt Wiki-Links bei Bedarf (read-only)
-- **Nach dem Run** — der `reflect` Skill liest den Report und schreibt neue `brain/`-Knoten
-- Du reviewst per `git diff brain/` und committest — der Agent lernt nicht, das **Repo** lernt
+- **Beim Run**: `brain/index.md` landet im System-Prompt, der Agent folgt Wiki-Links bei Bedarf (read-only)
+- **Nach dem Run**: der `reflect` Skill liest den Report und schreibt neue `brain/`-Knoten
+- Du reviewst per `git diff brain/` und committest. Der Agent lernt nicht, das **Repo** lernt
 
 </v-clicks>
 
 <div v-click class="mt-10 text-xl">
-Inspiriert von <code>poteto/brainmaxxing</code> — genau die <span class="text-[#ff6bed]">Search + Learning</span>-Loop aus der Bitter Lesson.
+Inspiriert von <code>poteto/brainmaxxing</code>. Genau die <span class="text-[#ff6bed]">Search + Learning</span>-Loop aus der Bitter Lesson.
 </div>
 
 ---
 
 <div class="mt-8 text-xl opacity-80">
-In meinen Experimenten klappt das richtig gut — und ich bin überzeugt:
+In meinen Experimenten klappt das richtig gut. Und ich bin überzeugt:
 </div>
 
 <div class="mt-6 text-2xl leading-snug">
@@ -1455,7 +1455,7 @@ wird ein QA Engineer bald nicht mehr alles <span class="text-[#ff6bed]">selbst k
 ![explore-qa Demo](/explore-qa-demo.png)
 
 <div class="mt-3 text-sm opacity-70">
-<code>/onboard-site otto.de</code> — der Agent startet die Discovery mit agent-browser.
+<code>/onboard-site otto.de</code>. Der Agent startet die Discovery mit agent-browser.
 </div>
 
 </div>
@@ -1486,7 +1486,7 @@ backgroundSize: contain
 
 # Bonus: app-screenshots Skill
 
-Ein **Skill**, den ich gebaut hab — nutzt ebenfalls Agent Browser.
+Ein **Skill**, den ich gebaut hab. Nutzt ebenfalls Agent Browser.
 
 Du sagst zum Agent:
 
@@ -1517,7 +1517,7 @@ Funktioniert auf lokalen Dev-Servern **und** Live-Sites.
 
 <div class="flex flex-col items-center gap-3">
   <img src="/claude-computer-use.png" class="rounded-lg max-h-96" />
-  <div class="opacity-70 text-sm">Claude Code kann jetzt auch deinen Computer benutzen — hier editiert er live in iMovie.</div>
+  <div class="opacity-70 text-sm">Claude Code kann jetzt auch deinen Computer benutzen. Hier editiert er live in iMovie.</div>
 </div>
 
 ---
@@ -1529,7 +1529,7 @@ Funktioniert auf lokalen Dev-Servern **und** Live-Sites.
 > "The biggest lesson that can be read from 70 years of AI research is that **general methods that leverage computation** are ultimately the most effective, and by a large margin."
 
 <div class="mt-6 text-lg opacity-85">
-Chess, Go, Speech Recognition, Vision — überall dasselbe Muster:<br>
+Chess, Go, Speech Recognition, Vision: überall dasselbe Muster.<br>
 Menschen bauen ihr Domänenwissen ein. Es hilft kurzfristig. Dann kommt Skalierung und überholt alles.
 </div>
 
@@ -1563,7 +1563,7 @@ Die bittere Lektion sagt: Bau lieber den <span class="text-[#ff6bed]">Loop</span
 
 ---
 
-# AI QA ersetzt nicht — sie sitzt obendrauf
+# AI QA ersetzt nicht, sie sitzt obendrauf
 
 <div class="flex justify-center">
   <div class="relative" style="width: 752px; height: 452px;">
@@ -1591,7 +1591,7 @@ Die bittere Lektion sagt: Bau lieber den <span class="text-[#ff6bed]">Loop</span
 </div>
 
 <div class="text-center text-lg opacity-80 mt-2">
-Die Pyramide bleibt. Quinn sitzt obendrauf — für das, was Scripts nicht finden.
+Die Pyramide bleibt. Quinn sitzt obendrauf, für das, was Scripts nicht finden.
 </div>
 
 ---
@@ -1608,7 +1608,7 @@ Die Pyramide bleibt. Quinn sitzt obendrauf — für das, was Scripts nicht finde
 
 <div class="mt-8 text-lg opacity-80">
 Die letzte Zeile ist der Haken: AI QA ist <b>nicht</b> reproduzierbar wie ein Script.<br/>
-Deswegen ergänzt sie die Pyramide — sie ersetzt sie nicht.
+Deswegen ergänzt sie die Pyramide. Sie ersetzt sie nicht.
 </div>
 
 ---
@@ -1620,12 +1620,15 @@ image: /4-jobs.png
 
 Die latenten Eigenschaften schneiden quer durch Job-Titel und Orgs:
 
-1. **Product Eng / Vibe Coder** — Generalisten mit hoher Velocity, product-minded
-2. **Security / SRE / Infra** — halten den beschleunigten Output zusammen
-3. **Hot People** — Sales, CX, People: easy UX für die Welt, angenehm im Raum
-4. **Grown-ups** — Legal, Finance: der Erwachsene der "hey, komm schon" sagt
+1. **Product Eng / Vibe Coder**: Generalisten mit hoher Velocity, product-minded
+2. **Security / SRE / Infra**: halten den beschleunigten Output zusammen
+3. **Hot People**: Sales, CX, People. Easy UX für die Welt, angenehm im Raum
+4. **Grown-ups**: Legal, Finance. Der Erwachsene, der "hey, komm schon" sagt
 
-→ **QA ist keine eigene Spalte mehr.** Es ist eine *Haltung* die durch alle vier läuft.
+
+<div class="mt-6 text-xs opacity-60">
+Quelle: <a href="https://99d.substack.com/p/there-will-only-be-four-jobs">99d.substack.com/p/there-will-only-be-four-jobs</a>
+</div>
 
 ---
 
@@ -1637,7 +1640,7 @@ Fragen?
 
 <div class="mt-12 flex flex-col items-center">
   <img
-    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://quality-night-hamburg-26-git-main-alexanderops-projects.vercel.app/"
+    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fquality-night-hamburg-26.vercel.app%2F1"
     alt="QR Code zu den Slides"
     class="rounded-lg bg-white p-2"
   />
