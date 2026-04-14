@@ -43,5 +43,6 @@ const items = [
   { icon: icon('i-carbon-location'), text: 'Bayern' },
   { icon: icon('i-carbon-pen'), text: 'Blogger auf alexop.dev' },
   { icon: icon('i-carbon-microphone'), text: 'Speaker' },
+  { icon: icon('i-carbon-favorite'), text: 'Liebt Franzbrötchen 🥐' },
 ]
 </script>

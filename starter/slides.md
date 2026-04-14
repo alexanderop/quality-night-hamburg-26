@@ -156,8 +156,66 @@ layout: statement
 <div class="mt-4 text-2xl">Aber ich bin überzeugt: <span class="text-[#ff6bed]">dort geht die Reise hin.</span></div>
 
 ---
+layout: statement
+---
+
+# Ich bin <span class="text-[#ff6bed]">Entwickler</span>, kein QA-Engineer
+
+<div class="mt-6 text-xl opacity-80">Alles, was jetzt kommt, sind <b>Ideen</b> aus Entwickler-Sicht.</div>
+<div class="mt-4 text-xl opacity-80">Ich bin nachher gespannt auf den Austausch —<br/>wie ihr als <span class="text-[#ff6bed]">echte QA-Engineers</span> das seht.</div>
+
+---
 
 <About />
+
+---
+layout: center
+---
+
+<div class="agenda w-full max-w-2xl mx-auto text-left">
+  <div v-for="(item, i) in [
+    { title: 'Warum QA jetzt', sub: 'Code ist schnell, QA wird zum Bottleneck' },
+    { title: 'Agents 101', sub: 'LLM, Tools, Loop — und Claude Code' },
+    { title: 'Die Idee', sub: 'Ein QA-Agent, der PRs prüft' },
+    { title: 'Browser-Tools', sub: 'MCP vs CLI, Agent Browser, Snapshot-and-ref' },
+    { title: 'Vom Laptop in die CI', sub: 'claude -p, Skills, GitHub Actions' },
+    { title: 'Das große Bild', sub: '4 Patterns & Bitter Lesson' },
+  ]" :key="i" v-click class="agenda-row">
+    <span class="agenda-num">{{ String(i + 1).padStart(2, '0') }}</span>
+    <div>
+      <div class="agenda-title">{{ item.title }}</div>
+      <div class="agenda-sub">{{ item.sub }}</div>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+.agenda-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.agenda-num {
+  color: #ff6bed;
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+.agenda-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.agenda-sub {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.125rem;
+}
+</style>
 
 ---
 
@@ -184,6 +242,22 @@ layout: statement
 </RoughSvg>
 
 Das LLM würfelt nicht  es **gewichtet**. Jedes nächste Token ist eine Wahrscheinlichkeitsverteilung. Klingt nach "stochastischem Papagei" — viele sehen es genau so.
+
+---
+layout: image-right
+image: /wolfram-chatgpt.png
+---
+
+# Lese-Empfehlung
+
+**Stephen Wolfram** — *What Is ChatGPT Doing … and Why Does It Work?*
+
+Der beste Einstieg, wenn du wirklich verstehen willst, was unter der Haube passiert — von Wahrscheinlichkeiten über Embeddings bis zu Transformern.
+
+- 📖 Als Buch bei Wolfram Media
+- 🔗 Kostenlos als Blog-Post: <span class="text-[#ff6bed]">writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work</span>
+
+<div class="text-xs opacity-60 mt-4">Mein Fazit: ⭐⭐⭐⭐⭐ — nach dem Lesen fühlt sich LLM nicht mehr wie Magie an.</div>
 
 ---
 
@@ -472,22 +546,35 @@ Stattdessen: **Agent Browser** (vercel-labs)
 
 # Snapshot-and-ref
 
+````md magic-move
 ```bash
-agent-browser open https://workout-tracker-ten-pi.vercel.app
-agent-browser snapshot -i        # interaktive Elemente mit refs
-agent-browser click @e2          # per ref klicken
-agent-browser fill @e3 "Squat"
-agent-browser console            # JS-Errors auslesen
-agent-browser screenshot
+agent-browser open https://www.otto.de
 ```
 
-`snapshot -i` gibt einen Accessibility-Tree zurück, in dem **jedes Element eine ref wie `@e1` bekommt**. Keine harten Selektoren. Layout ändert sich? Egal — Claude liest den neuen Snapshot und arbeitet mit den neuen refs.
+```bash
+agent-browser open https://www.otto.de
+agent-browser snapshot -i        # interaktive Elemente mit refs
+```
 
 ```bash
 - link "zur Homepage" [ref=e1]
 - searchbox "Wonach suchst du?" [ref=e2]
 - button "Suche abschicken" [ref=e3]
 ```
+
+```bash
+agent-browser click @e2          # per ref klicken
+agent-browser fill @e3 "Squat"
+agent-browser console            # JS-Errors auslesen
+agent-browser screenshot
+```
+````
+
+<v-click>
+
+`snapshot -i` gibt einen Accessibility-Tree zurück, in dem **jedes Element eine ref wie `@e1` bekommt**. Keine harten Selektoren. Layout ändert sich? Egal — Claude liest den neuen Snapshot und arbeitet mit den neuen refs.
+
+</v-click>
 
 ---
 
@@ -505,14 +592,6 @@ agent-browser screenshot
 
 ---
 
-# Snapshot Output
-
-<div class="flex justify-center">
-  <img src="/qa-smoke-test-report.png" class="rounded-lg max-h-[480px]" />
-</div>
-
----
-
 # Der Loop
 
 <v-clicks>
@@ -525,6 +604,24 @@ agent-browser screenshot
 6. ✅ Test bestanden
 
 </v-clicks>
+
+---
+layout: center
+---
+
+# Ein Loop ist nur so gut wie seine Auslösung.
+
+<v-click>
+
+Solange ich ihn **manuell** starte, ist er ein Spielzeug.
+
+</v-click>
+
+<v-click>
+
+Erst wenn ihn **etwas anderes** startet — ein Script, ein Hook, ein PR — wird er ein Agent.
+
+</v-click>
 
 ---
 
@@ -606,21 +703,19 @@ Ein Befehl. Claude öffnet den Browser, klickt sich durch, schaut in die Console
 
 ---
 
-# Aber Moment — testet das wirklich wie ein QA-Engineer?
+# Das war kein QA-Test. Das war ein Smoke-Test.
 
-"Lädt die Homepage?" und "klick 2 Links" ist kein QA-Test — das ist ein Smoke-Test. Also habe ich Claude Code selbst gefragt:
+> *"Wie testen wir wie ein echter QA-Engineer?"*
 
-> *"Wie können wir den Prompt verbessern damit es wie ein echter QA-Engineer testet?"*
+<v-clicks>
 
-**Die Antwort:**
+- 🎭 **Persona + Rubrik**
+- 🛤️ **User-Journeys** statt Klicks
+- ❌ **Negative Tests**
+- 🔄 **Reload-Resilienz**
+- 📋 **Expected vs Actual**
 
-- 🎭 **Persona + Rubrik**: Senior QA, Given/When/Then, Severity-Skala
-- 🛤️ **Echte User-Journeys** statt Klick-Tests — **Outcomes** verifizieren
-- ❌ **Negative Tests**: leere Forms, ungültige Werte, doppeltes Klicken
-- 🔄 **Reload-Resilienz**: überlebt der State einen Reload?
-- 📋 **Strukturierter Output**: Expected vs Actual, Repro-Schritte
-
-→ Tradeoff: längere Läufe, höhere Kosten — dafür **echte Bugs** statt "alles grün".
+</v-clicks>
 
 ---
 
@@ -757,12 +852,6 @@ Ein Skill, den der Implementation Agent **selbst aufrufen** kann — um zu prüf
 Kein statischer E2E-Test. Der Agent liest die Diff, **entscheidet selbst**, welche Seiten relevant sind, und testet sie im echten Browser.
 
 ---
-layout: image
-image: /claude-review.png
-backgroundSize: contain
----
-
----
 
 # Und am Ende? test-browser läuft
 
@@ -782,11 +871,6 @@ Claude Code Web, Cursor Background Agent, Copilot Coding Agent bauen das Feature
 
 → Der QA-Loop läuft **ohne dich**.
 
----
-layout: image
-image: /pr-136.png
-backgroundSize: contain
----
 
 ---
 
@@ -818,93 +902,6 @@ Ein **Agent**, der bei jedem Pull Request via **GitHub Actions** automatisch pr�
 </RoughSvg>
 
 ---
-
-# Vom Laptop in die Cloud
-## Zwei Claudes. Ein Vertrag. Ein QA-Loop.
-
----
-
-# Der Kreislauf
-
-<div class="mt-8 text-center text-2xl">
-  Ein Claude schreibt den Testplan.<br>
-  Ein anderer führt ihn aus.
-</div>
-
-<div class="mt-6 text-center text-xl opacity-70">
-  Das PR-Template ist der Vertrag zwischen beiden.
-</div>
-
-<div v-click class="absolute inset-0 bg-black flex items-center justify-center">
-  <QALoopDiagram />
-</div>
-
----
-layout: image
-image: /pr-136.png
-backgroundSize: contain
----
----
-
-# Das Ergebnis zuerst
-
-Bevor wir YAML lesen: so sieht das Zielbild aus.
-
-- PR auf
-- QA-Agent läuft in GitHub Actions
-- Sticky Comment landet direkt am Pull Request
-- Critical Bugs blocken den Merge
-
-> Nicht "nice to have Doku", sondern ein ausführbarer QA-Report im Dev-Workflow.
-
----
----
-layout: image
-image: /qa-smoke-test-report.png
-backgroundSize: contain
----
-
----
-
-# GitHub Actions in 60 Sekunden
-
-Stell dir vor, das Repo hat einen Butler:
-
-- Ein Event passiert: PR geöffnet, synchronisiert, gelabelt
-- GitHub schaut in `.github/workflows/`
-- Ein Workflow startet
-- Darin laufen Jobs auf einer frischen VM
-- Ein Job besteht aus Steps: `run:` oder `uses:`
-
-Für diesen Talk reicht eine Mental Map:
-
-> Event → Workflow → Job → Step
-
----
-
-# Schritt 1: `/pr` schreibt den Testplan
-
-Der erste Claude läuft **lokal** beim Entwickler und verwandelt den Diff in einen QA-fähigen PR-Body.
-
-```md
-name: pr
-description: Generate or update a structured pull request with
-summary, acceptance criteria, QA scope, risk areas,
-and executable test scenarios.
-```
-
-Was daran stark ist:
-
-- erst User-Impact, dann Implementierungsdetails
-- Acceptance Criteria als konkrete, testbare Outcomes
-- QA Scope bewusst eng und time-boxed
-- Manual Test Scenarios so geschrieben, dass QA sie direkt ausführen kann
-
----
-
-> Der Prompt ist kein Template. Er ist bereits QA-Training für den Dev-Agent.
-
----
 layout: two-cols-header
 ---
 
@@ -931,68 +928,7 @@ Was der Vertrag leistet:
 - Leere oder schwammige PRs fallen sofort auf
 - Das Template wird von "Pflichtfeld" zu "ausführbarer Spezifikation"
 
----
-
-# Schritt 2: CI liest den Vertrag
-
-Der zweite Claude liest genau diese PR-Sections wieder aus.
-
-```bash
-extract_section() {
-  awk -v h="## $1" '
-    $0 == h {flag=1; next}
-    flag && /^## / {flag=0}
-    flag {print}
-  ' <<<"$PR_BODY"
-}
-
-ACCEPTANCE_CRITERIA="$(extract_section 'Acceptance Criteria')"
-QA_SCOPE="$(extract_section 'QA Scope')"
-RISK_AREAS="$(extract_section 'Risk Areas')"
-```
-
-Danach landen diese Felder wieder im Prompt für den Browser-Agent.
-
-> Das PR-Template ist damit wirklich executable.
-
----
-
-# Die Brücke zwischen Laptop und CI
-
-| Lokal | CI |
-|---|---|
-| `/pr` schreibt den Vertrag | Workflow liest denselben Vertrag |
-| `claude -p` gegen lokalen Dev-Server | `claude-code-action` gegen Preview-Deploy |
-| Terminal-Output lesen | Sticky Comment am PR |
-| Noch mal probieren | Retry-Step |
-| Ctrl+C nach ein paar Minuten | `timeout-minutes: 20` |
-| Im Kopf bewerten | JSON-Schema + Merge Gate |
-
-Die entscheidende Zeile:
-
-> derselbe Prompt, dasselbe Modell, dieselben Tools, nur anderer Trigger
-
----
-
-# Contract Enforcement
-
-Was passiert, wenn der Entwickler den Vertrag schlampig ausfüllt?
-
-- Acceptance Criteria leer
-- QA Scope fehlt
-- Manual Test Scenarios sind zu vage
-
-Dann wird der Run nicht einfach "irgendwie grün".
-
-```yaml
-contract_valid: false
-status: neutral_or_yellow
-reason: "PR contract incomplete"
-```
-
-Der starke Punkt für QA:
-
-> Nicht erst der Code wird getestet. Schon der Testplan wird geprüft.
+> Der zweite Claude in CI liest genau diese Sections wieder aus — das Template ist damit **executable**.
 
 ---
 
@@ -1013,151 +949,6 @@ Das Schema macht den Output CI-tauglich.
 - freier Text für Menschen
 - feste Felder für die Pipeline
 - klare Severity statt Bauchgefühl
-
----
-
-# CI-Run Demo
-
-<div class="mt-10 border border-[#ff6bed] rounded-xl p-8 bg-[#ff6bed]/8">
-  <div class="text-3xl font-bold">Placeholder für dein CI-Run-Video</div>
-  <div class="mt-4 text-xl opacity-80">PR wird erstellt → Workflow startet → Sticky Comment erscheint → Verdict setzt den Status.</div>
-</div>
-
-<div class="mt-8 text-lg opacity-75">
-  Diese Slide funktioniert auch als kurzer Live-Bridge-Moment zwischen "Contract" und "Production".
-</div>
-
----
-
-# Was du nur in Production lernst
-
-- `continue-on-error: true` plus Retry-Step, weil Agenten nicht deterministisch sind
-- `concurrency:` mit `cancel-in-progress: true`, damit neue Pushes alte Runs abbrechen
-- `timeout-minutes: 20`, damit dir kein Runaway-Agent Kosten produziert
-- `use_sticky_comment: true`, damit Re-Runs nicht den PR zuspammen
-- Action per SHA pinnen, nicht nur `@v1`, wegen Supply-Chain-Sicherheit
-
----
-
-# In echt sind es nicht 12 Zeilen YAML
-
-```mermaid
-flowchart TD
-    A[permissions: {}] --> B[timeout-minutes: 20]
-    B --> C[concurrency cancel-in-progress]
-    C --> D[pinned action SHA]
-    D --> E[sticky comment]
-```
-
-Die Slide-Version zeigt das Prinzip.
-Die Production-Version löst zusätzlich Ops-, Kosten- und Security-Probleme.
-
----
-
-# Fork-PRs sind ein anderer Sicherheitsfall
-
-Das Problem:
-
-> Fremder Code plus deine Secrets ist keine gute Kombination.
-
-Deshalb braucht der Workflow einen Guard:
-
-```yaml
-if: github.event.pull_request.head.repo.full_name == github.repository
-```
-
-Für Forks heißt das in der Praxis:
-
-- kein blindes Ausführen mit Secrets
-- lieber zweistufig: prüfen, dann bewusst freigeben
-- Human-in-the-loop ist hier kein Bug, sondern das Sicherheitsmodell
-- **`ACTIONS_STEP_DEBUG: true` nie anschalten** — loggt Tool-Output inkl. Dateiinhalte & ENV unfiltered ins öffentliche Actions-Log
-
----
-
-# Der QA-Agent ist nur ein Pattern von vier
-
-`claude-code-action@v1` unterstützt vier Muster — du hast bisher **eins** gesehen.
-
-<div class="grid grid-cols-2 gap-4 mt-6 text-sm">
-  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
-    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 1</div>
-    <div class="text-lg font-bold mb-1">Interactive</div>
-    <div class="opacity-80">Dev schreibt <code>@claude fix it</code> im PR-Kommentar → Agent pusht Fix</div>
-  </div>
-  <div class="border border-[#ff6bed] rounded px-4 py-4 bg-[#ff6bed]/10">
-    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 2 — unser Fokus</div>
-    <div class="text-lg font-bold mb-1">Automated PR Review / QA</div>
-    <div class="opacity-80">PR öffnet → Agent testet / reviewt automatisch</div>
-  </div>
-  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
-    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 3</div>
-    <div class="text-lg font-bold mb-1">CI Auto-Fix</div>
-    <div class="opacity-80">CI wird rot → Agent diagnostiziert Log → pusht Fix-Branch</div>
-  </div>
-  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
-    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">Pattern 4</div>
-    <div class="text-lg font-bold mb-1">Structured Output</div>
-    <div class="opacity-80">JSON-Schema → nachgelagerte Steps entscheiden (flaky? retry?)</div>
-  </div>
-</div>
-
-<div class="mt-6 text-center opacity-80">Pattern 4 kennst du schon — das ist unser Merge Gate.</div>
-
----
-
-# Pattern 1: Interactive `@claude`
-
-Kein Auto-Trigger. Der Agent wartet auf Zuruf — irgendwo in PR, Issue oder Review-Kommentar.
-
-```yaml
-on:
-  issue_comment:         { types: [created] }
-  pull_request_review_comment: { types: [created] }
-
-jobs:
-  claude:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-```
-
-Dann reicht im PR-Kommentar:
-
-> `@claude fix the failing test in auth.spec.ts`
-
-→ Branch wird ausgecheckt, Fehler gelesen, Datei editiert, Commit gepusht. **Nur für User mit Write-Access** — externe Contributors blockiert by default.
-
----
-
-# Pattern 3: CI Auto-Fix — der Force Multiplier
-
-Trigger: CI wird rot. Der Agent liest die Logs, macht einen Fix-Branch, pusht, öffnet PR. **Merge bleibt beim Menschen.**
-
-```yaml
-on:
-  workflow_run:
-    workflows: ["CI"]
-    types: [completed]
-
-jobs:
-  auto-fix:
-    if: |
-      github.event.workflow_run.conclusion == 'failure' &&
-      !startsWith(github.event.workflow_run.head_branch, 'claude-auto-fix-ci-')
-    steps:
-      - uses: anthropics/claude-code-action@v1
-        with:
-          prompt: "CI failed. Diagnose logs, fix root cause."
-          claude_args: "--max-turns 10 --allowedTools 'Edit,Read,Bash(git:*),Bash(npm:*)'"
-```
-
-Das `!startsWith(...'claude-auto-fix-ci-')` ist **kein Kosmetik-Check** — ohne den Guard triggert jeder Fix-Commit wieder den Fixer. Endlosschleife auf deiner Kreditkarte.
 
 ---
 
@@ -1204,6 +995,483 @@ Die Rolle von QA verschiebt sich damit nach oben:
 - weniger Klickarbeit
 - mehr Contracts, Severity-Modelle und klare Acceptance Criteria
 - mehr Systemdesign für Qualität statt nur Testausführung
+
+---
+
+# Mehr dazu lesen
+
+<div class="grid grid-cols-2 gap-8 items-center mt-6">
+
+<div>
+
+![AI QA Engineer](/ai-qa-engineer.png)
+
+</div>
+
+<div class="flex flex-col items-center">
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https%3A%2F%2Falexop.dev%2Fposts%2Fbuilding_ai_qa_engineer_claude_code_playwright%2F" class="w-64 h-64 bg-white p-3 rounded" />
+
+<div class="mt-4 text-sm opacity-70 text-center">
+alexop.dev — Building an AI QA Engineer<br>with Claude Code & Playwright MCP
+</div>
+
+</div>
+
+</div>
+
+---
+
+---
+layout: image
+image: /one-more-thing.png
+backgroundSize: contain
+---
+
+---
+layout: statement
+---
+
+# Bonus: <span class="text-[#ff6bed]">otto-qa</span>
+
+<div class="mt-6 text-2xl opacity-80">Ich bau gerade ein Framework,</div>
+<div class="mt-2 text-2xl">das <span class="text-[#ff6bed]">verschiedene Agents</span> auf <span class="text-[#ff6bed]">Test-Pläne</span> loslässt.</div>
+
+---
+
+# Das Problem
+
+<div class="grid grid-cols-[1fr_auto] gap-8 items-start">
+
+<div>
+
+Exploratives Testing der Suche auf otto.de — Mobile.
+
+<v-clicks>
+
+- 🐌 **Manuell teuer** — Klickarbeit, schwer reproduzierbar, kein Audit-Trail
+- 🔒 **Hart verdrahtete E2E-Tests** brechen bei jeder UI-Änderung
+- 🤖 **Welcher Agent ist der beste für QA?** Claude, Codex, Copilot?
+- 🧰 **Welches Browser-Tool?** agent-browser oder playwright-cli?
+
+</v-clicks>
+
+<div class="mt-10 opacity-80">Ich will <b>vergleichen</b> können — gleicher Test, andere Agents.</div>
+
+</div>
+
+<img src="/pepe-silvia.png" class="rounded max-h-[260px]" />
+
+</div>
+
+---
+
+# Die Lösung
+
+Du schreibst <span class="text-[#ff6bed]">Charters</span> (Markdown-Missionen). Kein Test-Code.
+
+<div class="flex justify-center">
+
+```mermaid {scale: 0.7, look: 'handDrawn', theme: 'dark'}
+flowchart LR
+    A[Charter<br/>Markdown Mission] --> B[Coding-Agent<br/>claude / codex / copilot]
+    B --> C[Browser-CLI<br/>agent-brws / playwright]
+    B --> D[report.md<br/>+ screenshots]
+    C --> E[otto.de<br/>Mobile]
+```
+
+</div>
+
+Agent und Browser sind **austauschbar**. Derselbe Charter läuft auf jeder Kombi — A/B-Vergleich frei Haus.
+
+---
+
+# Der Workflow
+
+<div class="flex justify-center">
+
+```mermaid {scale: 0.5}
+flowchart TB
+    A[QA Engineer] -->|schreibt| B[Charter.md]
+    B --> C{qa.ts}
+    C -->|spawnt| D[Coding-Agent<br/>claude / codex / copilot]
+    D <-->|Tool-Calls| E[Browser-CLI<br/>agent-browser / playwright]
+    E <-->|Snapshots| F[otto.de Mobile]
+    D -->|schreibt| G[report.md + screenshots]
+    G -->|reviewt| A
+    G -.->|reflect| H[(brain/)]
+    H -.->|injectet| D
+```
+
+</div>
+
+<div class="mt-4 opacity-80 text-sm">
+Der innere Loop ist <span class="text-[#ff6bed]">Search</span> (Agent ↔ Browser), der äußere Loop ist <span class="text-[#ff6bed]">Learning</span> (Report → brain → nächster Run).
+</div>
+
+---
+
+# Repo-Struktur
+
+```
+otto-qa/
+├── charters/              ← Test-Missionen (du editierst hier)
+│   ├── search-mobile-smoke.md
+│   ├── search-mobile-full.md
+│   ├── cart-mobile.md
+│   └── ...
+├── prompts/               ← geteilte Prompt-Bausteine
+│   ├── _browser-workflow.md
+│   ├── _report-format.md
+│   └── _honesty-checks.md
+├── brain/                 ← QA-Wissen, wächst über Zeit (read-only im Run)
+├── qa-runs/               ← Run-Artefakte (Reports, Screenshots, Logs)
+├── .claude/skills/        ← reflect, meditate, agent-battle
+└── scripts/               ← qa.ts (Wizard) + run-charter.ts
+```
+
+<div class="mt-6 opacity-80">
+95% der Zeit verbringst du in <code>charters/</code>, <code>qa-runs/</code> und <code>brain/</code>.
+</div>
+
+---
+
+# Ein Charter
+
+```markdown
+---
+defaultModel: claude-opus-4-6
+defaultBrowser: playwright-cli
+includeFragments: [_browser-workflow, _report-format]
+---
+
+# Mission
+Smoke-Test der Suche auf otto.de (Mobile, iPhone 15 Pro).
+
+# Szenarien
+1. Startseite öffnen, Suchfeld finden
+2. "Laufschuhe" suchen, Ergebnisse prüfen
+3. Empty-State testen ("asdfghjkl")
+
+# Output
+Schreib den Bericht nach {{reportPath}}, Screenshots nach {{screenshotDir}}.
+```
+
+```bash
+bun scripts/qa.ts search-mobile-smoke claude playwright-cli
+```
+
+---
+
+# Der Output
+
+```
+qa-runs/playwright-cli/2026-04-14_10-32-11/
+├── report.md              ← Findings, Bewertung, Schritte
+├── screenshots/
+│   ├── 01_home_loaded.png
+│   ├── 02_search_results.png
+│   └── 03_FINDING_empty_state.png
+├── logs/
+│   └── claude-session.jsonl
+└── duration.txt           ← Charter, Agent, Browser, Dauer
+```
+
+Pro Run ein Ordner, sortiert nach Browser-Backend — damit du `agent-browser` und `playwright-cli` <span class="text-[#ff6bed]">parallel laufen</span> und vergleichen kannst.
+
+---
+
+# Aber: <span class="text-[#ff6bed]">welcher Agent</span> ist eigentlich besser?
+
+<v-clicks>
+
+- Claude liefert schöne Reports — aber ist er auch gründlicher?
+- Codex ist schneller — findet er auch die echten Bugs?
+- Copilot CLI ist neu — kann der überhaupt mithalten?
+
+</v-clicks>
+
+<div v-click class="mt-10 text-2xl">
+Manuell drei Runs starten, drei Reports lesen, vergleichen?<br>
+<span class="text-[#ff6bed]">Zu viel Klickarbeit.</span>
+</div>
+
+---
+
+# Der Test-Case
+
+<div class="text-2xl mt-8">
+Klick dich auf <span class="text-[#ff6bed]">otto.de</span> (iPhone) durch:
+</div>
+
+<div class="text-3xl mt-6">
+Menü → Mode → Damen → Schuhe → <span class="text-[#ff6bed]">Sneaker</span>
+</div>
+
+<div class="text-xl mt-10 opacity-80">
+Funktioniert das Menü? Stimmen die Breadcrumbs? Bricht irgendwas?
+</div>
+
+---
+layout: statement
+---
+
+# 🥊 agent-battle
+
+<div class="mt-6 text-2xl opacity-80">Ein Skill, der denselben Charter parallel</div>
+<div class="mt-2 text-2xl">mit <span class="text-[#ff6bed]">allen drei Agents</span> laufen lässt.</div>
+
+---
+
+# Wie agent-battle funktioniert
+
+<v-clicks>
+
+1. **Anpfiff** — drei Background-Tasks parallel: claude, codex, copilot
+2. **Live-Kommentar** — Skill pollt die Session-Logs alle 60s und kommentiert wie ein Fußball-Reporter
+3. **Abpfiff** — wenn alle drei fertig sind: Vergleichs-Report
+4. **Bewertung** — Speed, Findings, Disziplin, Report-Qualität
+
+</v-clicks>
+
+```bash
+> agent-battle search-mobile-full
+```
+
+<div v-click class="mt-4 opacity-80">
+Aus drei separaten <code>bun qa.ts</code>-Aufrufen wird <b>ein</b> Befehl mit Live-Vergleich.
+</div>
+
+---
+
+# Ein echter Battle
+
+Charter: **`category-nav-mobile`** — Damen → Schuhe → Sneaker, Drill-Down, Breadcrumbs, Sticky-Verhalten.
+
+<div class="grid grid-cols-3 gap-4 mt-8 text-sm">
+  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">claude-opus-4-6</div>
+    <div class="text-2xl font-bold mb-2">Claude</div>
+    <div class="opacity-80">⏱ 6:20</div>
+    <div class="opacity-80">🟥 <b>error</b></div>
+    <div class="opacity-80">0 Findings</div>
+    <div class="mt-2 text-xs opacity-70">Session abgebrochen — Run nicht zu Ende gefahren.</div>
+  </div>
+  <div class="border border-[#ff6bed] rounded px-4 py-4 bg-[#ff6bed]/10">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">gpt-5.4</div>
+    <div class="text-2xl font-bold mb-2">Codex</div>
+    <div class="opacity-80">⏱ 7:09</div>
+    <div class="opacity-80">🟡 <b>findings</b></div>
+    <div class="opacity-80">1 Finding</div>
+    <div class="mt-2 text-xs opacity-85">Overlay-Bug: Floating Filter-CTA bleibt über dem offenen Burger-Menü sichtbar + klickbar.</div>
+  </div>
+  <div class="border border-white/20 rounded px-4 py-4 bg-white/5">
+    <div class="text-xs uppercase tracking-wider opacity-60 mb-1">gpt-5.4</div>
+    <div class="text-2xl font-bold mb-2">Copilot</div>
+    <div class="opacity-80">⏱ 12:31</div>
+    <div class="opacity-80">🟢 <b>pass</b></div>
+    <div class="opacity-80">0 Findings</div>
+    <div class="mt-2 text-xs opacity-70">Alles grün — aber den Overlay-Bug übersehen.</div>
+  </div>
+</div>
+
+<div class="mt-6 text-lg">
+Gleicher Charter, gleicher Browser. <span class="text-[#ff6bed]">Drei unterschiedliche Ergebnisse.</span>
+</div>
+
+---
+
+# Was Codex gemacht hat
+
+<div class="grid grid-cols-4 gap-3 mt-6">
+  <div class="flex flex-col items-center">
+    <img src="/codex-03-01-damen.png" class="rounded max-h-[300px]" />
+    <div class="text-xs opacity-70 mt-1">1. Drill-Down: Damen</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <img src="/codex-04-01-sneaker.png" class="rounded max-h-[300px]" />
+    <div class="text-xs opacity-70 mt-1">2. Sneaker-Landing</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <img src="/codex-05-01-menu-open.png" class="rounded max-h-[300px]" />
+    <div class="text-xs opacity-70 mt-1">3. Burger-Menü offen</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <img src="/codex-05-02-filter-overlay.png" class="rounded max-h-[300px] border-2 border-[#ff6bed]" />
+    <div class="text-xs text-[#ff6bed] mt-1">4. 🐛 Filter-CTA klickbar!</div>
+  </div>
+</div>
+
+<div class="mt-6 opacity-80">
+Codex ist den Charter Schritt für Schritt durchgegangen — Drill-Down, Landing, Menü öffnen. Dann fällt ihm auf: der <b>rote Filter-CTA</b> bleibt über dem offenen Menü sichtbar. Er tippt drauf — und es öffnet sich ein zweiter Drawer <b>über</b> dem Burger-Menü.
+</div>
+
+---
+
+# Der Finding-Report
+
+```markdown
+### F-01 — Filter-CTA bleibt über geöffnetem Burger-Menü sichtbar
+
+- Severity: Major
+- Szenario: Burger-Menü auf Sneaker-Landingpage
+- Repro-Schritte:
+  1. Mobile-Viewport öffnen, Sortiment → Damen → Schuhe → Sneaker
+  2. Auf der Landingpage das Burger-Menü öffnen
+  3. Beobachten: roter Filter-CTA unten rechts bleibt sichtbar
+  4. Filter-CTA antippen
+  5. Filter-Drawer öffnet sich ÜBER dem Burger-Menü
+- Erwartung: Bei offenem Burger-Menü sollten Page-CTAs inaktiv sein,
+  immer nur eine Overlay-Ebene aktiv.
+- Ist: Zwei konkurrierende Layer gleichzeitig aktiv.
+- Evidenz: ./screenshots/05_02_filter-overlay-while-menu-open.png
+- Vermutete Ursache: Floating-CTA wird beim Menü-Open nicht per
+  Z-Index/Pointer-Events deaktiviert.
+```
+
+<div class="mt-4 opacity-80 text-sm">
+Severity, Repro-Schritte, Erwartung vs. Ist, Evidenz-Screenshot, Hypothese — <span class="text-[#ff6bed]">alles automatisch generiert</span>. Ready für Jira.
+</div>
+
+---
+
+# Und warum ist Claude abgebrochen?
+
+Statt Logs zu durchforsten — frag <span class="text-[#ff6bed]">Claude Code</span> direkt im Run-Ordner.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+```
+> warum ist bei category-nav-mobile
+  bei claude ein fehler entstanden
+```
+
+<div class="mt-4 text-sm opacity-80">
+Claude Code liest <code>error_max_turns.json</code>, sieht <b>"Reached max turns (60)"</b> — nach 6:17 hing er beim Scrollen.
+</div>
+
+<div class="mt-2 text-sm">
+<b>Fix:</b> <code>defaultMaxTurns: 90</code> im Charter.
+</div>
+
+</div>
+
+<div>
+
+<img src="/claude-code-investigate.png" class="rounded border border-white/20" />
+
+</div>
+
+</div>
+
+<div class="mt-4 opacity-70 text-sm">
+Die Run-Artefakte sind alle Markdown + JSON — jeder Coding-Agent kann sie lesen und erklären.
+</div>
+
+---
+
+# Was der Battle zeigt
+
+<v-clicks>
+
+- **Codex** war der einzige, der den echten Overlay-Bug gefunden hat — und das <b>schneller</b> als Copilot
+- **Copilot** war gründlich, aber zu nachsichtig — 🟢 pass, obwohl der Bug da war
+- **Claude** ist einfach <b>abgebrochen</b> — das willst du wissen, bevor du ihn für CI einplanst
+- Modell-Name ≠ Agent-Qualität — Codex und Copilot nutzen beide `gpt-5.4`, Ergebnisse sind trotzdem komplett verschieden
+
+</v-clicks>
+
+<div v-click class="mt-8 text-xl">
+Ohne Battle hättest du <span class="text-[#ff6bed]">einen</span> Agent gewählt und den Overlay-Bug verpasst.
+</div>
+
+---
+
+# Warum das wichtig ist
+
+<v-clicks>
+
+- Agents werden **wöchentlich** besser — Snapshot von heute ist morgen veraltet
+- Modelle sind **nicht gleich gut** in allen Domains — QA ist anders als Coding
+- Du kannst nicht für jedes Charter raten — du musst **messen**
+
+</v-clicks>
+
+<div v-click class="mt-10 text-xl">
+Das Framework ist nicht "der beste Agent für QA". Es ist das <span class="text-[#ff6bed]">Harness</span>, mit dem du das jederzeit neu beantworten kannst.
+</div>
+
+---
+
+# Das QA-Gedächtnis: `brain/`
+
+Eine Markdown-Wissensbasis, die über Runs hinweg wächst.
+
+<v-clicks>
+
+- **Beim Run** — `brain/index.md` landet im System-Prompt, der Agent folgt Wiki-Links bei Bedarf (read-only)
+- **Nach dem Run** — der `reflect` Skill liest den Report und schreibt neue `brain/`-Knoten
+- Du reviewst per `git diff brain/` und committest — der Agent lernt nicht, das **Repo** lernt
+
+</v-clicks>
+
+<div v-click class="mt-10 text-xl">
+Inspiriert von <code>poteto/brainmaxxing</code> — genau die <span class="text-[#ff6bed]">Search + Learning</span>-Loop aus der Bitter Lesson.
+</div>
+
+---
+
+# Kommt bald: Blog-Post & Open Source
+
+<div class="mt-8 text-2xl leading-relaxed">
+
+Ich werde das Ganze in einem <span class="text-[#ff6bed]">Blog-Post</span> aufschreiben — das Framework liegt schon auf <span class="text-[#ff6bed]">GitHub</span>, jede:r kann es mit eigenen Projekten ausprobieren.
+
+</div>
+
+<div class="mt-8 text-xl opacity-80">
+In meinen Experimenten klappt das richtig gut — und ich bin überzeugt:
+</div>
+
+<div class="mt-6 text-2xl leading-snug">
+So wie ein Entwickler heute nicht mehr alles <span class="text-[#ff6bed]">selbst schreibt</span>,<br>
+wird ein QA Engineer bald nicht mehr alles <span class="text-[#ff6bed]">selbst klicken</span>.<br>
+<span class="opacity-80">AI Agents übernehmen die Ausführung.</span>
+</div>
+
+---
+
+# Selbst ausprobieren: `explore-qa`
+
+<div class="grid grid-cols-2 gap-8 items-center mt-4">
+
+<div>
+
+![explore-qa Demo](/explore-qa-demo.png)
+
+<div class="mt-3 text-sm opacity-70">
+<code>/onboard-site otto.de</code> — der Agent startet die Discovery mit agent-browser.
+</div>
+
+</div>
+
+<div class="flex flex-col items-center">
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https%3A%2F%2Fgithub.com%2Falexanderop%2Fexplore-qa" class="w-60 h-60 bg-white p-3 rounded" />
+
+<div class="mt-4 text-base opacity-80 text-center">
+<code>github.com/alexanderop/explore-qa</code>
+</div>
+
+<div class="mt-3 text-sm opacity-70 text-center">
+Clone it, onboard deine Site,<br>und lass die Agents loslaufen.
+</div>
+
+</div>
+
+</div>
 
 ---
 layout: image
@@ -1295,24 +1563,28 @@ Die bittere Lektion sagt: Bau lieber den <span class="text-[#ff6bed]">Loop</span
 # AI QA ersetzt nicht — sie sitzt obendrauf
 
 <div class="flex justify-center">
-  <RoughSvg :width="720" :height="420" :padding="16" :roughness="1.5" :seed="17">
-    <RoughRect :x="60"  :y="300" :width="600" :height="70" variant="muted"   fill-style="hachure" />
-    <RoughRect :x="150" :y="220" :width="420" :height="70" variant="muted"   fill-style="hachure" />
-    <RoughRect :x="225" :y="140" :width="270" :height="70" variant="default" fill-style="hachure" />
-    <RoughRect :x="285" :y="60"  :width="150" :height="70" variant="accent"  fill-style="hachure" />
-
-    <RoughText :x="360" :y="100" variant="label">AI QA</RoughText>
-    <RoughText :x="360" :y="120" variant="subtitle">exploratory, edge cases</RoughText>
-
-    <RoughText :x="360" :y="180" variant="label">E2E</RoughText>
-    <RoughText :x="360" :y="200" variant="subtitle">Playwright / Cypress — deterministisch</RoughText>
-
-    <RoughText :x="360" :y="260" variant="label">Integration</RoughText>
-    <RoughText :x="360" :y="280" variant="subtitle">Komponenten-Zusammenspiel</RoughText>
-
-    <RoughText :x="360" :y="340" variant="label">Unit</RoughText>
-    <RoughText :x="360" :y="360" variant="subtitle">Regressionen in Millisekunden</RoughText>
-  </RoughSvg>
+  <div class="relative" style="width: 752px; height: 452px;">
+    <RoughSvg :width="720" :height="420" :padding="16" :roughness="1.5" :seed="17">
+      <g v-click="1">
+        <RoughRect :x="60"  :y="300" :width="600" :height="70" variant="muted"   fill-style="hachure" />
+      </g>
+      <g v-click="2">
+        <RoughRect :x="150" :y="220" :width="420" :height="70" variant="muted"   fill-style="hachure" />
+      </g>
+      <g v-click="3">
+        <RoughRect :x="225" :y="140" :width="270" :height="70" variant="default" fill-style="hachure" />
+      </g>
+      <g v-click="4">
+        <RoughRect :x="285" :y="60"  :width="150" :height="70" variant="accent"  fill-style="hachure" />
+      </g>
+    </RoughSvg>
+    <div class="absolute inset-0 pointer-events-none">
+      <div v-click="1" class="absolute left-1/2 -translate-x-1/2 text-white font-bold text-xl" style="top: 335px;">Unit</div>
+      <div v-click="2" class="absolute left-1/2 -translate-x-1/2 text-white font-bold text-xl" style="top: 255px;">Integration</div>
+      <div v-click="3" class="absolute left-1/2 -translate-x-1/2 text-white font-bold text-xl" style="top: 175px;">E2E</div>
+      <div v-click="4" class="absolute left-1/2 -translate-x-1/2 text-white font-bold text-xl" style="top: 95px;">AI Testing</div>
+    </div>
+  </div>
 </div>
 
 <div class="text-center text-lg opacity-80 mt-2">
@@ -1337,20 +1609,21 @@ Deswegen ergänzt sie die Pyramide — sie ersetzt sie nicht.
 </div>
 
 ---
-
-# Take-Away
-
-> **AI macht QA nicht überflüssig — sie verschiebt QA von *Tippen* zu *Denken*.**
-
-**Für Manager:** Der Hebel ist nicht mehr "wer testet?", sondern "was heißt eigentlich *funktioniert*?".
-
-**Für Devs:** Bau dir den Loop selbst. Lokal mit `claude -p`, in CI mit `claude-code-action`. Dieselben Flags.
-
-**Für Montagmorgen:** Nimm **einen** Smoke-Test. Lass ihn in einem PR-Workflow laufen. Den Rest baust du iterativ.
-
+layout: image-right
+image: /4-jobs.png
 ---
 
-layout: end
+# From now on there are only 4 jobs
+
+Die latenten Eigenschaften schneiden quer durch Job-Titel und Orgs:
+
+1. **Product Eng / Vibe Coder** — Generalisten mit hoher Velocity, product-minded
+2. **Security / SRE / Infra** — halten den beschleunigten Output zusammen
+3. **Hot People** — Sales, CX, People: easy UX für die Welt, angenehm im Raum
+4. **Grown-ups** — Legal, Finance: der Erwachsene der "hey, komm schon" sagt
+
+→ **QA ist keine eigene Spalte mehr.** Es ist eine *Haltung* die durch alle vier läuft.
+
 ---
 
 # Danke!
