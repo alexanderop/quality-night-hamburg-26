@@ -44,6 +44,17 @@ class: text-center
 </div>
 
 ---
+layout: center
+class: text-center
+---
+
+# Keine Notizen nötig 📝
+
+<div class="mt-8 text-2xl opacity-80">
+  Ich teile die Slides am Ende
+</div>
+
+---
 layout: image
 image: /ai-buzzwords.png
 backgroundSize: contain
@@ -1422,14 +1433,6 @@ Inspiriert von <code>poteto/brainmaxxing</code> — genau die <span class="text-
 </div>
 
 ---
-
-# Kommt bald: Blog-Post & Open Source
-
-<div class="mt-8 text-2xl leading-relaxed">
-
-Ich werde das Ganze in einem <span class="text-[#ff6bed]">Blog-Post</span> aufschreiben — das Framework liegt schon auf <span class="text-[#ff6bed]">GitHub</span>, jede:r kann es mit eigenen Projekten ausprobieren.
-
-</div>
 
 <div class="mt-8 text-xl opacity-80">
 In meinen Experimenten klappt das richtig gut — und ich bin überzeugt:
